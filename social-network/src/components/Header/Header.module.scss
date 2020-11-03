@@ -1,0 +1,20 @@
+.header {
+  //overflow: hidden;
+  grid-area: header;
+  background-color: #579979;
+  height: 40px;
+  font-size: 14px;
+  display: flex;
+  flex-direction: row;
+  padding-left: 10%;
+  align-items: center;
+  font-family: 'Arizonia', cursive;
+  font-size: 26px;
+  color: white;
+}
+.icon {
+  height: 38px;
+}
+.h1 {
+  margin-left: 10px;
+}

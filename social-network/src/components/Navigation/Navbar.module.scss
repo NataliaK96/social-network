@@ -1,0 +1,22 @@
+.nav {
+  grid-area: nav;
+  line-height: 34px;
+}
+.icon {
+  width: 24px;
+  margin-right: 10px;
+}
+.link {
+  border-radius: 4px;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #335c49;
+  &:hover {
+    background-color: #dfd4c0;
+  }
+}
+.li {
+  margin-bottom: 8px;
+}
