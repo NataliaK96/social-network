@@ -1,3 +1,5 @@
+@import '../../assets/colors.scss';
+
 .nav {
   grid-area: nav;
   line-height: 34px;
@@ -12,11 +14,15 @@
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: #335c49;
+  color: $rifle-green;
   &:hover {
-    background-color: #dfd4c0;
+    background-color: $coffee-colored;
   }
 }
 .li {
   margin-bottom: 8px;
+}
+
+.active {
+  color: $green;
 }

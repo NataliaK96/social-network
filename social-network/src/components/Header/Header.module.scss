@@ -1,7 +1,8 @@
+@import '../../assets/colors.scss';
 .header {
   //overflow: hidden;
   grid-area: header;
-  background-color: #579979;
+  background-color: $green;
   height: 40px;
   font-size: 14px;
   display: flex;

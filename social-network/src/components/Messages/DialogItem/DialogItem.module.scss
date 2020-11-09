@@ -1,0 +1,24 @@
+@import './../../../assets/colors.scss';
+
+.dialog {
+  margin: 20px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+}
+
+.avatar {
+  width: 50px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.name {
+  text-decoration: none;
+  color: $rifle-green;
+}
+
+.active {
+  color: $green;
+  font-size: 20px;
+}

@@ -1,0 +1,9 @@
+@import './../../../assets/colors.scss';
+
+.postsBlock {
+  border: 1px $coffee solid;
+  border-radius: 8px;
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}

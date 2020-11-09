@@ -1,15 +1,6 @@
-import React from 'react'
-import { Dialogs } from '../Messages/Dialogs'
-import style from './Main.module.scss'
-import { Profile } from './Profile/Profile'
+import React from 'react';
+import style from './Main.module.scss';
 
-export const Main = () => {
-    return (
-            <div className={style.main}>
-                <Dialogs/>
-                {/* <Profile/> */}
-            </div>
-    
-
-    )
-}
+export const Main = (props) => {
+  return <div className={style.main}>{props.children}</div>;
+};
