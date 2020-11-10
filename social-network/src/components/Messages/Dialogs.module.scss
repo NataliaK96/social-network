@@ -3,8 +3,9 @@
 .dialogs {
   display: grid;
   grid-template-columns: 3fr 12fr;
-  border: 1px $coffee solid;
   border-radius: 8px;
+  background-color: white;
+  box-shadow: $shadow;
 
   .dialogsItem {
     color: $rifle-green;

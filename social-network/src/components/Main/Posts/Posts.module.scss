@@ -1,7 +1,7 @@
 @import './../../../assets/colors.scss';
 
 .postsBlock {
-  border: 1px $coffee solid;
+  box-shadow: $shadow;
   border-radius: 8px;
   background-color: white;
   padding: 20px;
