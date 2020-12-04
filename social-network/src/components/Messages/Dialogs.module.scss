@@ -6,8 +6,11 @@
   border-radius: 8px;
   background-color: white;
   box-shadow: $shadow;
+  // :hover {
+  //   cursor: pointer;
+  // }
 
-  .dialogsItem {
+  .dialogsItems {
     color: $rifle-green;
     font-weight: 500;
     border-right: 1px $coffee solid;
@@ -15,5 +18,26 @@
 }
 
 .messages {
-  padding-top: 17px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: flex-end;
+}
+
+.messageItem {
+  margin: 8px;
+  padding: 0.5em 1em;
+  border-radius: 12px;
+  background-color: $green-transparent;
+  width: fit-content;
+}
+
+.enterMessage {
+  display: flex;
+  flex-direction: row;
+}
+
+.messagesElement {
+  margin-bottom: 20px;
 }

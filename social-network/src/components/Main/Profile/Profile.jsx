@@ -7,7 +7,11 @@ export const Profile = (props) => {
   return (
     <div className={style.profile}>
       <ProfileInfo />
-      <Posts postData={props.state.postsData} />
+      <Posts
+        postData={props.profilePage.postsData}
+        dispatch={props.dispatch}
+        newPostText={props.profilePage.newPostText}
+      />
     </div>
   );
 };
