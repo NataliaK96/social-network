@@ -1,6 +1,6 @@
-import { messagesReducer } from './messagesReducer';
-import { profileReducer } from './profileReducer';
-import { sidebarReducer } from './sidebarReduser';
+import  {messagesReducer}  from './messagesReducer';
+import  {profileReducer}  from './profileReducer';
+import  {sidebarReducer}  from './sidebarReduser';
 
 let store = {
   _state: {
@@ -44,7 +44,6 @@ let store = {
       action
     );
     this._state.sidebar = sidebarReducer(this._state.sidebar, action);
-
     this._callSubscriber(this._state);
   },
 };

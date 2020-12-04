@@ -1,7 +1,22 @@
 const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
 const SEND_MESSAGE = 'SEND-MESSAGE';
 
-export const messagesReducer = (state, action) => {
+let initialState = {
+  dialogsData: [
+    { id: 1, name: 'Sveta Volkova' },
+    { id: 2, name: 'Olya Kolobok' },
+    { id: 3, name: 'Vlad Dimuch' },
+    { id: 4, name: 'Sergey Komarov' },
+  ],
+  messagesData: [
+    { id: 1, message: 'Hello' },
+    { id: 2, message: 'How are you?' },
+    { id: 3, message: 'Ok' },
+  ],
+  newMessageBody: '',
+}
+
+export const messagesReducer = (state = initialState, action) => {
   switch (action.type) {
     case UPDATE_NEW_MESSAGE_BODY:
       state.newMessageBody = action.body;
