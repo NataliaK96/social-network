@@ -7,7 +7,7 @@ import { Navbar } from './components/Navigation/Navbar';
 
 import { Profile } from './components/Main/Profile/Profile';
 import { Route } from 'react-router-dom';
-import { Dialogs } from './components/Messages/Dialogs';
+import { DialogsContainer } from './components/Messages/DialogsContainer';
 import { Friends } from './components/Friends/Friends';
 import { News } from './components/News/News';
 import { Music } from './components/Music/Music';
@@ -22,14 +22,12 @@ function App(props) {
         <Main>
           <Route
             path="/profile"
-            render={() => (
-              <Profile
-                profilePage={props.state.profilePage}
-                dispatch={props.dispatch}
-              />
-            )}
+            render={() => <Profile store={props.store} />}
           />
-          <Route path="/messages" render={() => <Dialogs store={props.store} />} />
+          <Route
+            path="/messages"
+            render={() => <DialogsContainer store={props.store} />}
+          />
           <Route path="/friends" render={() => <Friends />} />
           <Route path="/news" render={() => <News />} />
           <Route path="/music" render={() => <Music />} />
