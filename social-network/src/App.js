@@ -12,6 +12,7 @@ import { Friends } from './components/Friends/Friends';
 import { News } from './components/News/News';
 import { Music } from './components/Music/Music';
 import { Settings } from './components/Settings/Settings';
+import { Find } from './components/Friends/Find';
 
 function App(props) {
   return (
@@ -20,18 +21,26 @@ function App(props) {
       <div className={style.app_main}>
         <Navbar />
         <Main>
-          <Route
-            path="/profile"
-            render={() => <Profile store={props.store} />}
-          />
-          <Route
-            path="/messages"
-            render={() => <DialogsContainer store={props.store} />}
-          />
-          <Route path="/friends" render={() => <Friends />} />
-          <Route path="/news" render={() => <News />} />
-          <Route path="/music" render={() => <Music />} />
-          <Route path="/settings" render={() => <Settings />} />
+            <Route
+              path="/profile"
+              render={() => <Profile store={props.store} />}
+            />
+            <Route
+              path="/messages"
+              render={() => <DialogsContainer store={props.store} />}
+            />
+            <Route
+            exact
+              path="/friends"
+              render={() => <Friends store={props.store} />}
+            />
+            <Route
+              path="/friends/find"
+              render={() => <Find store={props.store} />}
+            />
+            <Route path="/news" render={() => <News />} />
+            <Route path="/music" render={() => <Music />} />
+            <Route path="/settings" render={() => <Settings />} />
         </Main>
       </div>
     </div>
