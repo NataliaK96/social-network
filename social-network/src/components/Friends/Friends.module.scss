@@ -8,17 +8,22 @@
 }
 .friend {
   display: flex;
-  flex-direction: row;
   color: $rifle-green;
   font-weight: 500;
   border-bottom: 1px $coffee solid;
   text-decoration: none;
   padding: 10px 0 10px 0;
-  align-items: center;
-  margin: 10px;
+  margin: 8px;
+  justify-content: space-between;
 }
+
 .avatar {
   width: 50px;
   margin-right: 10px;
   border-radius: 50%;
+}
+.userName {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }

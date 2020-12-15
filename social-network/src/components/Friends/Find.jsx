@@ -7,7 +7,9 @@ export const Find = () => {
     return (
         <div className={style.friends}>
         <SearchInput/>
+        <div>
         <UsersContainer/>
+        </div>
         </div>
     )
 }

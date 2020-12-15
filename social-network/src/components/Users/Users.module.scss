@@ -1,0 +1,13 @@
+.buttons {
+  display: flex;
+  flex-direction: column;
+}
+.user {
+  display: flex;
+  justify-content: space-between;
+}
+.location {
+  font-size: 14px;
+  font-weight: normal;
+  margin-top: 6px;
+}
