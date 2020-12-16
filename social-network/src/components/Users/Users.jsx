@@ -5,18 +5,23 @@ import { Button } from './../Button/Button';
 import style from './Users.module.scss';
 import * as axios from 'axios';
 
-export const Users = (props) => {
-  if (props.users.length === 0) {
-    axios
-      .get('https://social-network.samuraijs.com/api/1.0/users')
-      .then((response) => {
-        props.setUsers(response.data.items);
-      });
+export class Users extends React.Component {
+  getUsers = () => {
+    if (this.props.users.length === 0) {
+      axios
+        .get('https://social-network.samuraijs.com/api/1.0/users')
+        .then((response) => {
+          this.props.setUsers(response.data.items);
+        });
   }
-
-  const user = props.users.map((u) => {
-    let path = '/friends/' + u.id;
+  }
+  render() {
     return (
+    <div>
+      <button onClick={this.getUsers}>Get Users</button>
+      {this.props.users.map((u) => {
+    const path = '/friends/' + u.id;
+      return <div>
       <NavLink className={styleFriends.friend} to={path}>
         <div className={styleFriends.userName}>
           <img
@@ -37,7 +42,7 @@ export const Users = (props) => {
               onClick={(e) => {
                 e.stopPropagation();
                 e.preventDefault();
-                props.unfollow(u.id);
+                this.props.unfollow(u.id);
               }}
             >
               Unfriend
@@ -47,7 +52,7 @@ export const Users = (props) => {
               onClick={(e) => {
                 e.stopPropagation();
                 e.preventDefault();
-                props.follow(u.id);
+                this.props.follow(u.id);
               }}
             >
               Add friend
@@ -56,8 +61,11 @@ export const Users = (props) => {
           <button>Write message</button>
           <Button type="default">DEFAULT</Button>
         </div>
-      </NavLink>
+      </NavLink> 
+      </div>
+      })}
+      </div>
     );
-  });
-  return <>{user}</>;
-};
+  }
+}
+
