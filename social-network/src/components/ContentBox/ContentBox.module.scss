@@ -1,0 +1,8 @@
+@import './../../assets/colors.scss';
+.contentBox {
+  box-shadow: $shadow;
+  border-radius: 8px;
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}

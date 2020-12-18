@@ -1,9 +1,9 @@
 import React from 'react'
-
+import { ContentBox } from '../ContentBox/ContentBox'
 export const Music = () =>{
     return (
-        <div>
-            Music
-        </div>
+        <ContentBox>
+        Music
+    </ContentBox>
     )
 }

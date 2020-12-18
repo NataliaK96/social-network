@@ -1,10 +1,10 @@
 import React from 'react'
 import { ContentBox } from '../ContentBox/ContentBox'
 
-export const Settings = () =>{
+export const Help = () =>{
     return (
         <ContentBox>
-            Settings
+            Help
         </ContentBox>
     )
 }

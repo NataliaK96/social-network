@@ -1,6 +1,6 @@
 import React from 'react';
+import { ContentBox } from '../../ContentBox/ContentBox';
 import { Post } from './Post/Post';
-import style from './Posts.module.scss';
 
 export const Posts = (props) => {
   let postsElements = props.postData.map((p) => (
@@ -18,12 +18,12 @@ export const Posts = (props) => {
       props.updateNewPostText(text)
     }
   return (
-    <div className={style.postsBlock}>
+    <ContentBox>
       <div>
         <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText}/>
         <button onClick={ onAddPost }>Add post</button>
       </div>
       <div>{postsElements}</div>
-    </div>
+    </ContentBox>
   );
 };

@@ -13,6 +13,7 @@ import { News } from './components/News/News';
 import { Music } from './components/Music/Music';
 import { Settings } from './components/Settings/Settings';
 import { Find } from './components/Friends/Find';
+import { Help } from './components/Help/Help';
 
 function App(props) {
   return (
@@ -41,6 +42,7 @@ function App(props) {
             <Route path="/news" render={() => <News />} />
             <Route path="/music" render={() => <Music />} />
             <Route path="/settings" render={() => <Settings />} />
+            <Route path="/help" render={() => <Help />} />
         </Main>
       </div>
     </div>

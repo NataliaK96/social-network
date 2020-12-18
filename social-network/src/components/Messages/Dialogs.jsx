@@ -2,6 +2,7 @@ import React from 'react';
 import style from './Dialogs.module.scss';
 import { DialogItem } from './DialogItem/DialogItem';
 import { Message } from './Message/Message';
+import { ContentBox } from '../ContentBox/ContentBox';
 
 export const Dialogs = (props) => {
   let state = props.messagesPage;
@@ -29,7 +30,8 @@ export const Dialogs = (props) => {
   };
 
   return (
-    <div className={style.dialogs}>
+    <ContentBox className={style.dialogs}>
+    
       <div className={style.dialogsItems}>{dialogsElements}</div>
       <div className={style.messages}>
         <div className={style.messagesElement}>{messagesElement}</div>
@@ -46,6 +48,7 @@ export const Dialogs = (props) => {
           </div>
         </div>
       </div>
-    </div>
+    
+    </ContentBox>
   );
 };

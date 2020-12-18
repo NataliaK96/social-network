@@ -3,20 +3,12 @@
 .dialogs {
   display: grid;
   grid-template-columns: 3fr 12fr;
-  border-radius: 8px;
-  background-color: white;
-  box-shadow: $shadow;
-  // :hover {
-  //   cursor: pointer;
-  // }
-
-  .dialogsItems {
-    color: $rifle-green;
-    font-weight: 500;
-    border-right: 1px $coffee solid;
-  }
 }
-
+.dialogsItems {
+  color: $rifle-green;
+  font-weight: 500;
+  border-right: 1px $coffee solid;
+}
 .messages {
   margin: 20px;
   display: flex;
