@@ -1,15 +1,15 @@
 import React from 'react';
-import styleFriends from './../Friends/Friends.module.scss';
+import styleFriends from '../../views/friendsPage/Friends/Friends.module.scss';
 import { NavLink } from 'react-router-dom';
 import { Button } from '../Button/Button';
 import style from './Users.module.scss';
 
 export const Users = (props) => {
-    let pagesCount = Math.ceil(
+    /*let pagesCount = Math.ceil(
         props.totalUsersCount / props.pageSize
-      );
+      );*/
       let pages = [];
-      for (let i = 1; i <= pagesCount; i++) {
+      for (let i = 1; i <= 20; i++) {
         pages.push(i);
       }
 
@@ -33,7 +33,7 @@ export const Users = (props) => {
         const path = '/friends/' + u.id;
         return (
           <div>
-            <NavLink className={styleFriends.friend} to={path}>
+            <NavLink className={styleFriends.user} to={path}>
               <div className={styleFriends.userName}>
                 <img
                   className={styleFriends.avatar}

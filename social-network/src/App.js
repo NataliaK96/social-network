@@ -2,18 +2,18 @@ import React from 'react';
 import style from './App.module.scss';
 
 import { Header } from './components/Header/Header';
-import { Main } from './components/Main/Main';
+import { Main } from './views/profilePage/Main/Main';
 import { Navbar } from './components/Navigation/Navbar';
 
-import { Profile } from './components/Main/Profile/Profile';
+import { Profile } from './views/profilePage/Main/Profile/Profile';
 import { Route } from 'react-router-dom';
-import { DialogsContainer } from './components/Messages/DialogsContainer';
-import { Friends } from './components/Friends/Friends';
-import { News } from './components/News/News';
-import { Music } from './components/Music/Music';
-import { Settings } from './components/Settings/Settings';
-import { Find } from './components/Friends/Find';
-import { Help } from './components/Help/Help';
+import { DialogsContainer } from './views/messagesPage/Messages/DialogsContainer';
+import { Friends } from './views/friendsPage/Friends/Friends';
+import { News } from './views/newsPage/News/News';
+import { Music } from './views/musicPage/Music/Music';
+import { Settings } from './views/settingsPage/Settings/Settings';
+import { Find } from './views/friendsPage/Friends/Find';
+import { Help } from './views/helpPage/Help/Help';
 
 function App(props) {
   return (

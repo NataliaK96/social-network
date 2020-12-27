@@ -2,7 +2,7 @@ import React from 'react';
 import style from './Dialogs.module.scss';
 import { DialogItem } from './DialogItem/DialogItem';
 import { Message } from './Message/Message';
-import { ContentBox } from '../ContentBox/ContentBox';
+import { ContentBox } from '../../../components/ContentBox/ContentBox';
 
 export const Dialogs = (props) => {
   let state = props.messagesPage;

@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import {
   updateNewMessageBodyCreator,
   sendMessageCreator,
-} from '../../redux/messagesReducer';
+} from '../../../redux/messagesReducer';
 import { Dialogs } from './Dialogs';
 
 let mapStateToProps = (state) => {

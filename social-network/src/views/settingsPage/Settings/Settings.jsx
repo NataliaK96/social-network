@@ -1,5 +1,5 @@
 import React from 'react'
-import { ContentBox } from '../ContentBox/ContentBox'
+import { ContentBox } from '../../../components/ContentBox/ContentBox'
 
 export const Settings = () =>{
     return (

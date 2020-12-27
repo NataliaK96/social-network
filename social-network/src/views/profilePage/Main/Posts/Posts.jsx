@@ -1,5 +1,5 @@
 import React from 'react';
-import { ContentBox } from '../../ContentBox/ContentBox';
+import { ContentBox } from '../../../../components/ContentBox/ContentBox';
 import { Post } from './Post/Post';
 
 export const Posts = (props) => {

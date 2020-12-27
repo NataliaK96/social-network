@@ -1,8 +1,8 @@
 import React from 'react';
-import SearchInput from '../SearchInput/SearchInput';
-import UsersContainer from '../Users/UsersContainer';
+import SearchInput from '../../../components/SearchInput/SearchInput';
+import UsersContainer from '../../../components/Users/UsersContainer';
 import style from './Friends.module.scss'
-import { ContentBox } from '../ContentBox/ContentBox';
+import { ContentBox } from '../../../components/ContentBox/ContentBox';
 
 export const Find = () => {
     return (

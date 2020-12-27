@@ -1,8 +1,8 @@
 import React from 'react';
 import style from './Friends.module.scss';
 import { NavLink } from 'react-router-dom';
-import SearchInput from './../SearchInput/SearchInput';
-import { ContentBox } from '../ContentBox/ContentBox';
+import SearchInput from '../../../components/SearchInput/SearchInput';
+import { ContentBox } from '../../../components/ContentBox/ContentBox';
 
 const friendsData = [
   { id: 1, name: 'Sveta Volkova' },
@@ -15,7 +15,7 @@ export const Friends = () => {
   const myFriends = friendsData.map((f) => {
     let path = '/friends/' + f.id;
     return (
-      <NavLink className={style.friend} to={path}>
+      <NavLink className={style.user} to={path}>
         <div className={style.userName}>
           <img className={style.avatar} src="/user.png" alt="avatar" />
           <p>{f.name}</p>

@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './ProfileInfo.module.scss';
-import image from './../../../images/coconuts.jpg';
+import image from '../../../../images/coconuts.jpg';
 
 export const ProfileInfo = () => {
   return (
