@@ -1,8 +1,13 @@
 import React from 'react';
 import style from './ProfileInfo.module.scss';
 import image from '../../../../images/coconuts.jpg';
+import { Preloader } from '../../../../components/Preloader/Preloader';
+//"/user.png"
+export const ProfileInfo = (props) => {
+  if (!props.profile){
+    return <Preloader/>
+  }
 
-export const ProfileInfo = () => {
   return (
     <div className={style.profile}>
       <div className={style.theme}>
@@ -20,7 +25,7 @@ export const ProfileInfo = () => {
             src="/edit.png"
             alt="edit"
           />
-          <img className={style.avatar} src="/user.png" alt="avatar" />
+          <img className={style.avatar} src={props.profile.photos.large} alt="avatar" />
         </div>
         <div className={style.userDescripshion}>
           <div className={style.name}>Natalia Komarova</div>

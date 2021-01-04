@@ -5,7 +5,6 @@ import { Header } from './components/Header/Header';
 import { Main } from './views/profilePage/Main/Main';
 import { Navbar } from './components/Navigation/Navbar';
 
-import { Profile } from './views/profilePage/Main/Profile/Profile';
 import { Route } from 'react-router-dom';
 import { DialogsContainer } from './views/messagesPage/Messages/DialogsContainer';
 import { Friends } from './views/friendsPage/Friends/Friends';
@@ -14,6 +13,7 @@ import { Music } from './views/musicPage/Music/Music';
 import { Settings } from './views/settingsPage/Settings/Settings';
 import { Find } from './views/friendsPage/Friends/Find';
 import { Help } from './views/helpPage/Help/Help';
+import ProfileContainer from './views/profilePage/Main/Profile/ProfileContainer';
 
 function App(props) {
   return (
@@ -24,7 +24,7 @@ function App(props) {
         <Main>
             <Route
               path="/profile"
-              render={() => <Profile store={props.store} />}
+              render={() => <ProfileContainer store={props.store} />}
             />
             <Route
               path="/messages"
