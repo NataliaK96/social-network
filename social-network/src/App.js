@@ -23,7 +23,7 @@ function App(props) {
         <Navbar />
         <Main>
             <Route
-              path="/profile"
+              path="/profile/:userId?"
               render={() => <ProfileContainer store={props.store} />}
             />
             <Route

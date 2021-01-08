@@ -13,7 +13,7 @@ const friendsData = [
 
 export const Friends = () => {
   const myFriends = friendsData.map((f) => {
-    let path = '/friends/' + f.id;
+    let path = '/profile/' + f.id;
     return (
       <NavLink className={style.user} to={path}>
         <div className={style.userName}>

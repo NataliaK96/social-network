@@ -30,7 +30,7 @@ export const Users = (props) => {
         })}
       </div>
       {props.users.map((u) => {
-        const path = '/friends/' + u.id;
+        const path = '/profile/' + u.id;
         return (
           <div>
             <NavLink className={styleFriends.user} to={path}>
