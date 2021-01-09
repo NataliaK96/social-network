@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './App.module.scss';
 
-import { Header } from './components/Header/Header';
+import HeaderContainer from './components/Header/HeaderContainer';
 import { Main } from './views/profilePage/Main/Main';
 import { Navbar } from './components/Navigation/Navbar';
 
@@ -18,7 +18,7 @@ import ProfileContainer from './views/profilePage/Main/Profile/ProfileContainer'
 function App(props) {
   return (
     <div className={style.app_wrapper}>
-      <Header />
+      <HeaderContainer />
       <div className={style.app_main}>
         <Navbar />
         <Main>

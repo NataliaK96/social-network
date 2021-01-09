@@ -1,15 +1,20 @@
-import {combineReducers, createStore} from 'redux'
-import {profileReducer} from './profileReducer'
-import {messagesReducer} from './messagesReducer'
-import {sidebarReducer} from './sidebarReduser'
-import { usersReducer } from './usersReduser'
+import { combineReducers, createStore } from 'redux';
+import { profileReducer } from './profileReducer';
+import { messagesReducer } from './messagesReducer';
+import { sidebarReducer } from './sidebarReducer';
+import { usersReducer } from './usersReducer';
+import { authReducer } from './authReducer';
 
 let reducers = combineReducers({
-    profilePage: profileReducer,
-    messagesPage: messagesReducer,
-    sidebar: sidebarReducer,
-    usersPage: usersReducer
-})
-let store = createStore(reducers)
-window.store= store
-export default store
+  profilePage: profileReducer,
+  messagesPage: messagesReducer,
+  sidebar: sidebarReducer,
+  usersPage: usersReducer,
+  auth: authReducer,
+});
+let store = createStore(
+  reducers,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+window.store = store;
+export default store;
