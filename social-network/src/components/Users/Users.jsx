@@ -20,7 +20,7 @@ export const Users = (props) => {
         {pages.map((p) => {
           return (
             <span
-              className={props.currentPage === p && style.selectedPage}
+              className={(props.currentPage === p && style.selectedPage).toString()}
               onClick={() => {
                 props.onPageChanged(p);
               }}
@@ -50,9 +50,10 @@ export const Users = (props) => {
               </div>
               <div className={style.buttons}>
                 {u.followed ? (
-                  <button
+                  <button disabled={props.followingInProgress.some(id => id === u.id)}
                     onClick={(e) => {
                       e.preventDefault();
+                      props.toggleFollowingProgress(true, u.id)
                       axios
                         .delete(
                           `https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,
@@ -67,15 +68,17 @@ export const Users = (props) => {
                           if (response.data.resultCode === 0) {
                             props.unfollow(u.id);
                           }
+                          props.toggleFollowingProgress(false, u.id)
                         });
                     }}
                   >
                     Unfriend
                   </button>
                 ) : (
-                  <button
+                  <button disabled={props.followingInProgress.some(id => id === u.id)}
                     onClick={(e) => {
                       e.preventDefault();
+                      props.toggleFollowingProgress(true, u.id)
                       axios
                         .post(
                           `https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,
@@ -91,6 +94,7 @@ export const Users = (props) => {
                           if (response.data.resultCode === 0) {
                             props.follow(u.id);
                           }
+                          props.toggleFollowingProgress(false, u.id)
                         });
                     }}
                   >
