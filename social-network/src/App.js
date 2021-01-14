@@ -1,10 +1,8 @@
 import React from 'react';
 import style from './App.module.scss';
-
 import HeaderContainer from './components/Header/HeaderContainer';
 import { Main } from './views/profilePage/Main/Main';
 import { Navbar } from './components/Navigation/Navbar';
-
 import { Route } from 'react-router-dom';
 import { DialogsContainer } from './views/messagesPage/Messages/DialogsContainer';
 import { Friends } from './views/friendsPage/Friends/Friends';
@@ -14,6 +12,7 @@ import { Settings } from './views/settingsPage/Settings/Settings';
 import { Find } from './views/friendsPage/Friends/Find';
 import { Help } from './views/helpPage/Help/Help';
 import ProfileContainer from './views/profilePage/Main/Profile/ProfileContainer';
+import { Login } from './components/Login/Login';
 
 function App(props) {
   return (
@@ -43,6 +42,7 @@ function App(props) {
             <Route path="/music" render={() => <Music />} />
             <Route path="/settings" render={() => <Settings />} />
             <Route path="/help" render={() => <Help />} />
+            <Route path="/login" render={() => <Login />} />
         </Main>
       </div>
     </div>

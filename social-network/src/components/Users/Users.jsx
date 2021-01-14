@@ -3,7 +3,6 @@ import styleFriends from '../../views/friendsPage/Friends/Friends.module.scss';
 import { NavLink } from 'react-router-dom';
 import { Button } from '../Button/Button';
 import style from './Users.module.scss';
-import * as axios from 'axios';
 
 export const Users = (props) => {
   /*let pagesCount = Math.ceil(
@@ -53,23 +52,7 @@ export const Users = (props) => {
                   <button disabled={props.followingInProgress.some(id => id === u.id)}
                     onClick={(e) => {
                       e.preventDefault();
-                      props.toggleFollowingProgress(true, u.id)
-                      axios
-                        .delete(
-                          `https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,
-                          {
-                            withCredentials: true,
-                            headers: {
-                              'API-KEY': 'a8a8486d-50c9-4faa-8b35-2854e1c6e674'
-                            }
-                          }
-                        )
-                        .then((response) => {
-                          if (response.data.resultCode === 0) {
-                            props.unfollow(u.id);
-                          }
-                          props.toggleFollowingProgress(false, u.id)
-                        });
+                      props.unfollow(u.id)
                     }}
                   >
                     Unfriend
@@ -78,24 +61,7 @@ export const Users = (props) => {
                   <button disabled={props.followingInProgress.some(id => id === u.id)}
                     onClick={(e) => {
                       e.preventDefault();
-                      props.toggleFollowingProgress(true, u.id)
-                      axios
-                        .post(
-                          `https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,
-                          {},
-                          {
-                            withCredentials: true,
-                            headers: {
-                              'API-KEY': 'a8a8486d-50c9-4faa-8b35-2854e1c6e674'
-                            }
-                          }
-                        )
-                        .then((response) => {
-                          if (response.data.resultCode === 0) {
-                            props.follow(u.id);
-                          }
-                          props.toggleFollowingProgress(false, u.id)
-                        });
+                      props.follow(u.id)
                     }}
                   >
                     Add friend

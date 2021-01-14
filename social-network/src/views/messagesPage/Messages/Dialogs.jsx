@@ -3,6 +3,7 @@ import style from './Dialogs.module.scss';
 import { DialogItem } from './DialogItem/DialogItem';
 import { Message } from './Message/Message';
 import { ContentBox } from '../../../components/ContentBox/ContentBox';
+import { Redirect } from 'react-router-dom';
 
 export const Dialogs = (props) => {
   let state = props.messagesPage;
@@ -29,6 +30,7 @@ export const Dialogs = (props) => {
     props.updateNewMessageBody(body);
   };
 
+  if (!props.isAuth) return <Redirect to={'/Login'}/>
   return (
     <ContentBox className={style.dialogs}>
     
