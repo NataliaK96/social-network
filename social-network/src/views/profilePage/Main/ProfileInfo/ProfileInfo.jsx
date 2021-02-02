@@ -2,6 +2,7 @@ import React from 'react';
 import style from './ProfileInfo.module.scss';
 import image from '../../../../images/coconuts.jpg';
 import { Preloader } from '../../../../components/Preloader/Preloader';
+import { ProfileStatus } from './ProfileStatus';
 
 export const ProfileInfo = (props) => {
   if (!props.profile){
@@ -14,7 +15,7 @@ export const ProfileInfo = (props) => {
     <div className={style.profile}>
       <div className={style.theme}>
         <img onClick={ () => alert('hello!') }
-          className={[style.edit, style.theme].join(' ')}
+          className={[style.editTheme, style.theme].join(' ')}
           src="/edit.png"
           alt="edit"
         />
@@ -23,14 +24,19 @@ export const ProfileInfo = (props) => {
       <div className={style.userProfile}>
         <div className={style.ava}>
           <img onClick={ () => alert('Avatar!') }
-            className={[style.edit, style.ava].join(' ')}
+            className={[ style.ava, style.editAva].join(' ')}
             src="/edit.png"
             alt="edit"
           />
           <img className={style.avatar} src={userAvatar || defaultAvatar} alt="avatar" />
         </div>
         <div className={style.userDescripshion}>
-          <div className={style.name}>Natalia Komarova</div>
+          <div className={style.nameAndStatus}>
+            <div className={style.name}>
+            Natalia Komarova
+            </div>
+            <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
+            </div>
           <div className={style.param}>10.09.96</div>
           <div className={style.param}>Samara</div>
         </div>

@@ -1,3 +1,4 @@
+@import '../../../../assets/colors.scss';
 .userProfile {
   display: flex;
   flex-direction: row;
@@ -23,33 +24,72 @@
   width: 100px;
   border: 4px white solid;
   border-radius: 50%;
-  box-shadow: 0 0 5px rgba(90, 67, 46, 0.5);
+  box-shadow: $ava-shadow;
 }
 
 .userDescripshion {
   width: 100%;
   margin-left: 16px;
 
-  .name {
+  .nameAndStatus {
     margin-top: 36px;
-    font-size: 20px;
-    border-bottom: 1px #d3bda7 solid;
-    padding-bottom: 10px;
+    border-bottom: 1px $coffee solid;
     height: fit-content;
   }
 
+  .name {
+    font-size: 20px;
+  }
+
+  .status {
+    height: 16px;
+    padding: 4px 0 4px 0;
+    margin: 5px 0 5px 0;
+    &:hover {
+      background-color: $light-beige;
+    }
+  }
   .param {
     padding-top: 8px;
   }
 }
 
-.edit {
+.editTheme {
   width: 24px;
   z-index: 10;
   position: absolute;
   right: 10px;
   bottom: 10px;
+  border-radius: 50%;
+  box-shadow: $ava-shadow;
   &:hover {
     cursor: pointer;
   }
+}
+
+.editAva {
+  top: 81px;
+  width: 24px;
+  z-index: 10;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  border-radius: 50%;
+  box-shadow: $ava-shadow;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.statusInput {
+  outline: none;
+  box-shadow: $shadow;
+  border-radius: 4px;
+  border: 1px $coffee solid;
+  padding: 4px;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  position: absolute;
+  z-index: 10;
+  height: 30px;
 }
