@@ -4,27 +4,7 @@ import { DialogItem } from './DialogItem/DialogItem';
 import { Message } from './Message/Message';
 import { ContentBox } from '../../../components/ContentBox/ContentBox';
 import { Redirect } from 'react-router-dom';
-import { Field, reduxForm } from 'redux-form';
-
-const AddMessageForm = (props) => {
-  return (
-    <form onSubmit={props.handleSubmit}>
-      <div>
-        <Field
-          component="textarea"
-          name="newMessageBody"
-          placeholder="Enter your message"
-        />
-      </div>
-      <div>
-        <button>Send</button>
-      </div>
-    </form>
-  );
-};
-const AddMessageFormRedux = reduxForm({ form: 'dialogAddMessageForm' })(
-  AddMessageForm
-);
+import { AddMessageFormRedux } from './AddMessageForm';
 
 export const Dialogs = (props) => {
   let state = props.messagesPage;

@@ -12,7 +12,7 @@ import { Settings } from './views/settingsPage/Settings/Settings';
 import { Find } from './views/friendsPage/Friends/Find';
 import { Help } from './views/helpPage/Help/Help';
 import ProfileContainer from './views/profilePage/Main/Profile/ProfileContainer';
-import { Login } from './components/Login/Login';
+import Login from './components/Login/Login';
 
 function App(props) {
   return (
