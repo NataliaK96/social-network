@@ -3,7 +3,7 @@ import style from './App.module.scss';
 import HeaderContainer from './components/Header/HeaderContainer';
 import { Main } from './views/profilePage/Main/Main';
 import { Navbar } from './components/Navigation/Navbar';
-import { Route } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 import { DialogsContainer } from './views/messagesPage/Messages/DialogsContainer';
 import { Friends } from './views/friendsPage/Friends/Friends';
 import { News } from './views/newsPage/News/News';
@@ -13,40 +13,59 @@ import { Find } from './views/friendsPage/Friends/Find';
 import { Help } from './views/helpPage/Help/Help';
 import ProfileContainer from './views/profilePage/Main/Profile/ProfileContainer';
 import Login from './components/Login/Login';
+import { Component } from 'react';
+import { connect } from 'react-redux';
+import { initializeApp } from '../src/redux/appReducer';
+import { compose } from 'redux';
+import { Preloader } from './components/Preloader/Preloader';
+class App extends Component {
+  componentDidMount() {
+    this.props.initializeApp();
+  }
+  render() {
+    if (!this.props.initialized) {
+      return <Preloader />;
+    }
 
-function App(props) {
-  return (
-    <div className={style.app_wrapper}>
-      <HeaderContainer />
-      <div className={style.app_main}>
-        <Navbar />
-        <Main>
+    return (
+      <div className={style.app_wrapper}>
+        <HeaderContainer />
+        <div className={style.app_main}>
+          <Navbar />
+          <Main>
             <Route
               path="/profile/:userId?"
-              render={() => <ProfileContainer store={props.store} />}
+              render={() => <ProfileContainer store={this.props.store} />}
             />
             <Route
               path="/messages"
-              render={() => <DialogsContainer store={props.store} />}
+              render={() => <DialogsContainer store={this.props.store} />}
             />
             <Route
-            exact
+              exact
               path="/friends"
-              render={() => <Friends store={props.store} />}
+              render={() => <Friends store={this.props.store} />}
             />
             <Route
               path="/friends/find"
-              render={() => <Find store={props.store} />}
+              render={() => <Find store={this.props.store} />}
             />
             <Route path="/news" render={() => <News />} />
             <Route path="/music" render={() => <Music />} />
             <Route path="/settings" render={() => <Settings />} />
             <Route path="/help" render={() => <Help />} />
             <Route path="/login" render={() => <Login />} />
-        </Main>
+          </Main>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+  initialized: state.app.initialized,
+});
+export default compose(
+  withRouter,
+  connect(mapStateToProps, { initializeApp })
+)(App);
