@@ -2,7 +2,7 @@ import React from 'react';
 import style from './ProfileInfo.module.scss';
 import image from '../../../../images/coconuts.jpg';
 import { Preloader } from '../../../../components/Preloader/Preloader';
-import { ProfileStatus } from './ProfileStatus';
+import { ProfileStatusWithHooks } from './ProfileStatusWithHooks';
 
 export const ProfileInfo = (props) => {
   if (!props.profile){
@@ -35,7 +35,7 @@ export const ProfileInfo = (props) => {
             <div className={style.name}>
             Natalia Komarova
             </div>
-            <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
+            <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
             </div>
           <div className={style.param}>10.09.96</div>
           <div className={style.param}>Samara</div>
