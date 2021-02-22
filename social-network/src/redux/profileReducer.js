@@ -8,6 +8,8 @@ let initialState = {
   postsData: [
     { id: 1, message: "It's my first post", likeCount: 12 },
     { id: 2, message: 'Ho ho ho!', likeCount: 20 },
+    { id: 3, message: "Darat", likeCount: 128 },
+    { id: 4, message: 'Home!', likeCount: 0 },
   ],
   profile: null,
   status: 'write status'
