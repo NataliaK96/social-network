@@ -4,20 +4,24 @@ import HeaderContainer from './components/Header/HeaderContainer';
 import { Main } from './views/profilePage/Main/Main';
 import { Navbar } from './components/Navigation/Navbar';
 import { Route, withRouter } from 'react-router-dom';
-import { DialogsContainer } from './views/messagesPage/Messages/DialogsContainer';
 import { Friends } from './views/friendsPage/Friends/Friends';
 import { News } from './views/newsPage/News/News';
 import { Music } from './views/musicPage/Music/Music';
 import { Settings } from './views/settingsPage/Settings/Settings';
 import { Find } from './views/friendsPage/Friends/Find';
 import { Help } from './views/helpPage/Help/Help';
-import ProfileContainer from './views/profilePage/Main/Profile/ProfileContainer';
 import Login from './components/Login/Login';
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import { initializeApp } from '../src/redux/appReducer';
 import { compose } from 'redux';
 import { Preloader } from './components/Preloader/Preloader';
+import { DialogsContainer } from './views/messagesPage/Messages/DialogsContainer';
+import { withSuspense } from './hoc/withSuspense';
+
+const ProfileContainer = React.lazy(() =>
+  import('./views/profilePage/Main/Profile/ProfileContainer')
+);
 class App extends Component {
   componentDidMount() {
     this.props.initializeApp();
@@ -35,7 +39,7 @@ class App extends Component {
           <Main>
             <Route
               path="/profile/:userId?"
-              render={() => <ProfileContainer store={this.props.store} />}
+              render={withSuspense(ProfileContainer)}
             />
             <Route
               path="/messages"
