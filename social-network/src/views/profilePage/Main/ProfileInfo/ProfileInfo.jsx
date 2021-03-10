@@ -11,6 +11,7 @@ export const ProfileInfo = (props) => {
   }
   let defaultAvatar = '/user.png';
   let userAvatar = props.profile.photos.large;
+  
 
   const onMainPhotoSelected = (e) => {
     if (e.target.files.length) {
@@ -66,16 +67,19 @@ export const ProfileInfo = (props) => {
 
         <div className={style.userDescripshion}>
           <div className={style.nameAndStatus}>
-            <div className={style.name}>Natalia Komarova</div>
+            <div className={style.name}>{props.profile.fullName}</div>
             <ProfileStatusWithHooks
               status={props.status}
               updateStatus={props.updateStatus}
             />
           </div>
-          <div className={style.param}>10.09.96</div>
-          <div className={style.param}>Samara</div>
+          <div className={style.param}>
+            {props.profile.lookingForAJobDescription}
+          </div>
+          <div className={style.param}>{props.profile.aboutMe}</div>
         </div>
       </div>
     </div>
   );
 };
+

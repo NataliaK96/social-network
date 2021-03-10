@@ -46,7 +46,11 @@ export const User = ({ user, followingInProgress, unfollow, follow }) => {
             </button>
           )}
           <button>Write message</button>
-          <Button type="default">DEFAULT</Button>
+          <Button type="delete">delete</Button>
+          <Button type="upload">upload</Button>
+          <Button type="save">save</Button>
+          <Button type="send">send</Button>
+          <Button type="default">default</Button>
         </div>
       </NavLink>
     </div>

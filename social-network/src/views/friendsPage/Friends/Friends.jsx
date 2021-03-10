@@ -16,7 +16,7 @@ export const Friends = () => {
     let path = '/profile/' + f.id;
     return (
       <NavLink className={style.user} to={path}>
-        <div className={style.userName}>
+        <div className={style.divElement}>
           <img className={style.avatar} src="/user.png" alt="avatar" />
           <p>{f.name}</p>
         </div>

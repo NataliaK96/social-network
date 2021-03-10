@@ -24,12 +24,7 @@ export const Navbar = () => {
               <h3>Friends</h3>
               </NavLink>
             </li>
-            <li className={style.li}>
-            <NavLink className={style.link} to="/news" activeClassName={style.active}>
-            <img className={style.icon} src="/news.png" alt="news"/>
-              <h3>News</h3>
-              </NavLink>
-            </li>
+          
             <li className={style.li}>
             <NavLink className={style.link} to="/music" activeClassName={style.active}>
             <img className={style.icon} src="/music.png" alt="music"/>

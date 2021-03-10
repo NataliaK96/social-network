@@ -5,9 +5,8 @@ import { Main } from './views/profilePage/Main/Main';
 import { Navbar } from './components/Navigation/Navbar';
 import { Route, withRouter } from 'react-router-dom';
 import { Friends } from './views/friendsPage/Friends/Friends';
-import { News } from './views/newsPage/News/News';
-import { Music } from './views/musicPage/Music/Music';
-import { Settings } from './views/settingsPage/Settings/Settings';
+import { Music } from './views/musicPage/Music';
+import { Settings } from './views/settingsPage/Settings';
 import { Find } from './views/friendsPage/Friends/Find';
 import { Help } from './views/helpPage/Help/Help';
 import Login from './components/Login/Login';
@@ -54,7 +53,7 @@ class App extends Component {
               path="/friends/find"
               render={() => <Find store={this.props.store} />}
             />
-            <Route path="/news" render={() => <News />} />
+            
             <Route path="/music" render={() => <Music />} />
             <Route path="/settings" render={() => <Settings />} />
             <Route path="/help" render={() => <Help />} />
