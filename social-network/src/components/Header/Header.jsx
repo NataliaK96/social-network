@@ -7,7 +7,6 @@ let languages = ['en', 'ru', 'be'];
 export const Header = (props) => {
   return (
     <header className={style.header}>
-      <img className={style.logo} src="/logo.png" alt="logo" />
       <h1 className={style.h1}>Social Network</h1>
       <div className={style.loginBlock}>
         {props.isAuth ? (

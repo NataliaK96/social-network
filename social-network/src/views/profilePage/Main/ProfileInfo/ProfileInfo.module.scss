@@ -64,6 +64,7 @@
   box-shadow: $ava-shadow;
   &:hover {
     cursor: pointer;
+    box-shadow: $hover-shadow;
   }
 }
 
@@ -78,6 +79,7 @@
   box-shadow: $ava-shadow;
   &:hover {
     cursor: pointer;
+    box-shadow: $hover-shadow;
   }
 }
 

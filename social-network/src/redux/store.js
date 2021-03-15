@@ -1,6 +1,8 @@
-import  {messagesReducer}  from './messagesReducer';
-import  profileReducer from './profileReducer';
-import  {sidebarReducer}  from './sidebarReducer';
+import { sound } from '../views/musicPage/Sound';
+import { messagesReducer } from './messagesReducer';
+import profileReducer from './profileReducer';
+import { sidebarReducer } from './sidebarReducer';
+import { musicReducer } from './musicReducer';
 
 let store = {
   _state: {
@@ -26,6 +28,9 @@ let store = {
       newMessageBody: '',
     },
     sidebar: {},
+    musicPage: {
+      musicData: 'sound',
+    },
   },
   _callSubscriber() {
     console.log('State changed');
@@ -45,6 +50,7 @@ let store = {
     );
     this._state.sidebar = sidebarReducer(this._state.sidebar, action);
     this._callSubscriber(this._state);
+    this._state.musicPage = musicReducer(this._state.musicPage, action);
   },
 };
 

@@ -5,7 +5,6 @@ import { Main } from './views/profilePage/Main/Main';
 import { Navbar } from './components/Navigation/Navbar';
 import { Route, withRouter } from 'react-router-dom';
 import { Friends } from './views/friendsPage/Friends/Friends';
-import { Music } from './views/musicPage/Music';
 import { Settings } from './views/settingsPage/Settings';
 import { Find } from './views/friendsPage/Friends/Find';
 import { Help } from './views/helpPage/Help/Help';
@@ -17,6 +16,7 @@ import { compose } from 'redux';
 import { Preloader } from './components/Preloader/Preloader';
 import { DialogsContainer } from './views/messagesPage/Messages/DialogsContainer';
 import { withSuspense } from './hoc/withSuspense';
+import { MusicContainer } from './views/musicPage/MusicContainer';
 
 const ProfileContainer = React.lazy(() =>
   import('./views/profilePage/Main/Profile/ProfileContainer')
@@ -54,7 +54,7 @@ class App extends Component {
               render={() => <Find store={this.props.store} />}
             />
             
-            <Route path="/music" render={() => <Music />} />
+            <Route path="/music" render={() => <MusicContainer />} />
             <Route path="/settings" render={() => <Settings />} />
             <Route path="/help" render={() => <Help />} />
             <Route path="/login" render={() => <Login />} />
