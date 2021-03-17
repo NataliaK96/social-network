@@ -5,17 +5,22 @@ import { reduxForm } from 'redux-form';
 import { login } from '../../redux/authReducer';
 import { required } from '../../utils/validators/validators';
 import { createField, Input } from '../FormsControls/FormsControls';
-import style from '../FormsControls/FormsControls.module.scss';
+import styleForm from '../FormsControls/FormsControls.module.scss';
+import style from './Login.module.scss';
+import { Button } from '../Button/Button';
 
-const LoginForm = ({handleSubmit, error}) => {
+const LoginForm = ({ handleSubmit, error }) => {
   return (
-    <form onSubmit={handleSubmit}>
-      {createField("email",Input, [required], "email", 'Email')}
-      {createField("password",Input, [required], "password", 'Password')}
-      {createField("rememberMe",Input, null, "checkbox", null, 'Remember me')}
-      { error && <div className={style.formSummaryError}>{error}</div>}
-      <div>
-        <button>Login</button>
+    <form onSubmit={handleSubmit} className={style.loginField}>
+      {createField('email', Input, [required], 'email', 'Email')}
+      {createField('password', Input, [required], 'password', 'Password')}
+      <div className={style.remember}>
+      {createField('rememberMe', Input, null, 'checkbox', null)}
+      Remember me
+      </div>
+      {error && <div className={styleForm.formSummaryError}>{error}</div>}
+      <div className={style.loginButtonDiv}>
+      <Button type='submit' styleType="login" className={style.loginButton}>Login</Button>
       </div>
     </form>
   );
@@ -32,9 +37,11 @@ const Login = (props) => {
     return <Redirect to={'/profile'} />;
   }
   return (
-    <div>
-      <h1>Login</h1>
+    <div className={style.login_wrapper}>
+    <div className={style.loginForm}>
+      <h1>Welcome!</h1>
       <LoginReduxForm onSubmit={onSubmit} />
+    </div>
     </div>
   );
 };

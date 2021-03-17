@@ -16,6 +16,11 @@ export const useStyles = makeStyles((theme) => ({
   send: {
     backgroundColor: '#84deb2ab',
   },
+  login: {
+    backgroundColor: '#20d665',
+    color: '#ffffff',
+    width: '200px'
+  },
   default: {
     backgroundColor: '#84deb2ab',
   }

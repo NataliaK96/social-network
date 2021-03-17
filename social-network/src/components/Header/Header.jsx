@@ -15,7 +15,7 @@ export const Header = (props) => {
             <button onClick={props.logout}>Logout</button>
           </div>
         ) : (
-          <NavLink to={'/login'}>Login</NavLink>
+          <NavLink to={'/login'}>L</NavLink>
         )}
       </div>
       <div className={style.language}>

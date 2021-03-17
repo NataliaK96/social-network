@@ -1,16 +1,16 @@
 import React from 'react';
 import { Button as ButtonBase } from '@material-ui/core';
-import {useStyles} from './Button.styles';
+import { useStyles } from './Button.styles';
 import DeleteIcon from '@material-ui/icons/Delete';
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 import SaveIcon from '@material-ui/icons/Save';
 
 export const Button = (props) => {
-    const classes = useStyles();
+  const classes = useStyles();
   let className;
   let startIcon;
   let endIcon;
-  switch (props.type) {
+  switch (props.styleType) {
     case 'delete':
       startIcon = <DeleteIcon />;
       className = classes.delete;
@@ -26,11 +26,15 @@ export const Button = (props) => {
     case 'send':
       className = classes.send;
       break;
+      case 'login':
+      className = classes.login;
+      break;
     default:
       className = classes.default;
   }
   return (
     <ButtonBase
+      {...props}
       startIcon={startIcon}
       size="small"
       variant="contained"

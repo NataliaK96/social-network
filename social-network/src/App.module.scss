@@ -3,6 +3,8 @@
   margin: auto;
   background-color: $beige;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .app_main {
