@@ -1,8 +1,10 @@
 import { profileAPI } from '../api/api';
+import { themes } from '../views/profilePage/Themes/themes';
 
 const ADD_POST = 'ADD-POST';
 const SET_USER_PROFILE = 'SET-USER-PROFILE';
 const SET_STATUS = 'SET-STATUS';
+const SET_THEME = 'SET-THEME';
 const DELETE_POST = 'DELETE-POST';
 const SAVE_PHOTO_SUCCESS = 'SAVE-PHOTO-SUCCESS';
 
@@ -13,8 +15,24 @@ let initialState = {
     { id: 3, message: 'Darat', likeCount: 128 },
     { id: 4, message: 'Home!', likeCount: 0 },
   ],
-  profile: null,
+  profile: {
+    userId: null,
+    lookingForAJob: '',
+    lookingForAJobDescription: '',
+    fullName: '',
+    contacts: {
+      github: '',
+      vk: '',
+      facebook: '',
+      instagram: '',
+      twitter: '',
+      website: '',
+      youtube: '',
+      mainLink: ''
+    },
+  },
   status: 'write status',
+  theme: themes[0],
 };
 
 const profileReducer = (state = initialState, action) => {
@@ -43,6 +61,12 @@ const profileReducer = (state = initialState, action) => {
         status: action.status,
       };
     }
+    case SET_THEME: {
+      return {
+        ...state,
+        theme: action.theme,
+      };
+    }
     case DELETE_POST: {
       return {
         ...state,
@@ -52,7 +76,7 @@ const profileReducer = (state = initialState, action) => {
     case SAVE_PHOTO_SUCCESS: {
       return {
         ...state,
-        profile: {...state.profile, photos: action.photos}
+        profile: { ...state.profile, photos: action.photos },
       };
     }
     default:
@@ -68,18 +92,13 @@ export const setUserProfile = (profile) => ({
   type: SET_USER_PROFILE,
   profile,
 });
-export const setStatus = (status) => ({
-  type: SET_STATUS,
-  status,
-});
-export const deletePost = (postId) => ({
-  type: DELETE_POST,
-  postId,
-});
+export const setStatus = (status) => ({ type: SET_STATUS, status });
+export const deletePost = (postId) => ({ type: DELETE_POST, postId });
 export const savePhotoSuccess = (photos) => ({
   type: SAVE_PHOTO_SUCCESS,
   photos,
 });
+export const setTheme = (theme) => ({ type: SET_THEME, theme });
 
 export const getUserProfile = (userId) => async (dispatch) => {
   let response = await profileAPI.getProfile(userId);
@@ -93,6 +112,12 @@ export const updateStatus = (status) => async (dispatch) => {
   let response = await profileAPI.updateStatus(status);
   if (response.data.resultCode === 0) {
     dispatch(setStatus(status));
+  }
+};
+export const updateProfile = (profile) => async (dispatch) => {
+  let response = await profileAPI.updateProfile(profile);
+  if (response.data.resultCode === 0) {
+    dispatch(setUserProfile(profile));
   }
 };
 

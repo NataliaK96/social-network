@@ -6,7 +6,7 @@ import style from './SearchInput.module.scss';
 import { sound } from '../../views/musicPage/Sound';
 
 const SearchInputMusic = (props) => {
-  const [name, setName] = useState()
+  const [name, setName] = useState('')
   const find = (s) => {
     let str = s.toLowerCase();
     const filteredArr = sound.filter(
@@ -26,7 +26,8 @@ const SearchInputMusic = (props) => {
         placeholder="Search music"
         inputProps={{ 'aria-label': 'search music' }}
         onChange={(e)=>{
-          setName(e.currentTarget.value)
+          const name = e.currentTarget.value
+          name && setName(name)
         }}
       />
       <div className={style.iconButton} onClick={(e)=>{

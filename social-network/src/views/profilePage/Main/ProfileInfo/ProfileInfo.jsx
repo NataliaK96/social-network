@@ -1,17 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import style from './ProfileInfo.module.scss';
-import image from '../../../../images/coconuts.jpg';
 import { Preloader } from '../../../../components/Preloader/Preloader';
 import { ProfileStatusWithHooks } from './ProfileStatusWithHooks';
+import { ThemesModal } from '../../Themes/ThemesModal';
+import { ProfileGithubWithHooks } from './ProfileGithubWithHooks';
 
 export const ProfileInfo = (props) => {
-  const ref = React.createRef();
+  const [showModal, setShowModal] = useState(false);
   if (!props.profile) {
     return <Preloader />;
   }
   let defaultAvatar = '/user.png';
-  let userAvatar = props.profile.photos.large;
-  
+  let userAvatar = props.profile.photos && props.profile.photos.large;
 
   const onMainPhotoSelected = (e) => {
     if (e.target.files.length) {
@@ -20,66 +20,95 @@ export const ProfileInfo = (props) => {
   };
 
   return (
-    <div className={style.profile}>
-      <div className={style.theme}>
-        {props.isOwner && (
-          <>
-            <label htmlFor="file-input">
-              <img
-                className={[style.editTheme, style.theme].join(' ')}
-                src="/edit.png"
-                alt="edit"
-              />
-            </label>
-            <input className={style.input} id="file-input" type="file" />
-          </>
-        )}
-        <img className={style.img} src={image} alt="flowers" />
-      </div>
-
-      <div className={style.userProfile}>
-        <div className={style.ava}>
+    <>
+      <div className={style.profile}>
+        <div className={style.theme}>
           {props.isOwner && (
-            <>
-              <img
-                onClick={(e) => {
-                  ref.current.click();
-                }}
-                className={[style.ava, style.editAva].join(' ')}
-                src="/edit.png"
-                alt="edit"
-              />
-              <input
-                ref={ref}
-                className={style.input}
-                id="file-input"
-                onChange={onMainPhotoSelected}
-                type="file"
-              />
-            </>
+            <img
+              className={[style.editTheme, style.theme].join(' ')}
+              src="/edit.png"
+              alt="edit"
+              onClick={() => setShowModal(true)}
+            />
           )}
           <img
-            className={style.avatar}
-            src={userAvatar || defaultAvatar}
-            alt="avatar"
+            className={style.img}
+            src={props.theme.src}
+            alt={props.theme.alt}
           />
         </div>
 
-        <div className={style.userDescripshion}>
-          <div className={style.nameAndStatus}>
-            <div className={style.name}>{props.profile.fullName}</div>
-            <ProfileStatusWithHooks
-              status={props.status}
-              updateStatus={props.updateStatus}
+        <div className={style.userProfile}>
+          <div className={style.ava}>
+            {props.isOwner && (
+              <>
+                <label htmlFor="file-input-ava">
+                  <img
+                    className={[style.ava, style.editAva].join(' ')}
+                    src="/edit.png"
+                    alt="edit"
+                  />
+                </label>
+                <input
+                  className={style.input}
+                  id="file-input-ava"
+                  onChange={onMainPhotoSelected}
+                  type="file"
+                />
+              </>
+            )}
+            <img
+              className={style.avatar}
+              src={userAvatar || defaultAvatar}
+              alt="avatar"
             />
           </div>
-          <div className={style.param}>
-            {props.profile.lookingForAJobDescription}
+
+          <div className={style.userDescripshion}>
+            <div className={style.userInfo + ' ' + style.border}>
+              <p className={style.label}>Full Name:</p>
+              <div className={style.name + ' ' + style.infoBlock}>{props.profile.fullName}</div>
+            </div>
+            <div className={style.border}>
+              <div className={style.userInfo}>
+                <p className={style.label}>Status:</p>
+                <ProfileStatusWithHooks
+                  status={props.status}
+                  updateStatus={props.updateStatus}
+                  isOwner={props.isOwner}
+                />
+              </div>
+              <div className={style.userInfo}>
+                <p className={style.label}>GitHub:</p>
+                <ProfileGithubWithHooks
+                  profile={props.profile}
+                  github={props.profile.contacts.github}
+                  isOwner={props.isOwner}
+                  updateProfile={props.updateProfile}
+                />
+              </div>
+            </div>
           </div>
-          <div className={style.param}>{props.profile.aboutMe}</div>
         </div>
       </div>
-    </div>
+      {showModal && (
+        <ThemesModal
+          theme={props.theme}
+          save={props.setTheme}
+          onClose={() => setShowModal(false)}
+        />
+      )}
+    </>
   );
 };
 
+// const ProfileData = ({profile}) => {
+//   return <div>
+//   <b>Contact</b>: {profile.contacts.github}
+// </div>
+// }
+// const ProfileDataForm = ({profile}) => {
+//   return <div>
+//   <b>Contact</b>: {profile.contacts.github}
+// </div>
+// }

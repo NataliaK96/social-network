@@ -6,13 +6,7 @@ import { musicReducer } from './musicReducer';
 
 let store = {
   _state: {
-    profilePage: {
-      postsData: [
-        { id: 1, message: "It's my first post", likeCount: 12 },
-        { id: 2, message: 'Ho ho ho!', likeCount: 20 },
-      ],
-      newPostText: 'Enter text',
-    },
+    profilePage: null,
     messagesPage: {
       dialogsData: [
         { id: 1, name: 'Sveta Volkova' },
@@ -29,7 +23,7 @@ let store = {
     },
     sidebar: {},
     musicPage: {
-      musicData: 'sound',
+      musicData: sound,
     },
   },
   _callSubscriber() {

@@ -15,6 +15,8 @@ export const Button = (props) => {
       startIcon = <DeleteIcon />;
       className = classes.delete;
       break;
+    case 'close':
+      return <img src="/close.png" alt="close" className={classes.close} />;
     case 'upload':
       className = classes.upload;
       startIcon = <CloudUploadIcon />;
@@ -26,7 +28,7 @@ export const Button = (props) => {
     case 'send':
       className = classes.send;
       break;
-      case 'login':
+    case 'login':
       className = classes.login;
       break;
     default:

@@ -10,7 +10,7 @@ export const ProfileStatusWithHooks = (props) => {
   }, [props.status])
 
   const activateEditMode = () => {
-    setEditMode(true);
+    props.isOwner && setEditMode(true);
   };
 
   const deactivateEditMode = (event) => {
@@ -25,11 +25,10 @@ export const ProfileStatusWithHooks = (props) => {
   };
 
   return (
-    <div className={style.status}>
+    <div className={style.infoBlock} >
       {!editMode ? (
-        <div onClick={activateEditMode}>{props.status}</div>
+        <div className={style.status} onClick={activateEditMode}>{props.status}</div>
       ) : (
-        <div>
           <input
             className={style.statusInput}
             onChange={onStatusChange}
@@ -37,7 +36,7 @@ export const ProfileStatusWithHooks = (props) => {
             onKeyPress={deactivateEditMode}
             value={status}
           />
-        </div>
+        
       )}
     </div>
   );

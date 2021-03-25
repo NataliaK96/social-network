@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './ProfileInfo.module.scss';
 
-export class ProfileStatus extends React.Component {
+/*export class ProfileStatus extends React.Component {
   state = {
     editMode: false,
     status: this.props.status,
@@ -31,11 +31,11 @@ export class ProfileStatus extends React.Component {
 
   render() {
     return (
-      <div className={style.status}>
+      <div>
         {!this.state.editMode ? (
-          <div onClick={this.activateEditMode}>{this.props.status}</div>
+          <div className={style.status} onClick={this.activateEditMode}>{this.props.status}</div>
         ) : (
-          <div>
+          
             <input
               className={style.statusInput}
               onChange={this.onStatusChange}
@@ -43,9 +43,9 @@ export class ProfileStatus extends React.Component {
               onKeyPress={this.deactivateEditMode}
               value={this.state.status}
             />
-          </div>
+          
         )}
       </div>
     );
   }
-}
+}*/

@@ -12,6 +12,9 @@ export const Profile = (props) => {
         status={props.status}
         updateStatus={props.updateStatus}
         savePhoto = {props.savePhoto}
+        theme = {props.theme}
+        setTheme = {props.setTheme}
+        updateProfile={props.updateProfile}
       />
       <PostsContainer />
     </div>
