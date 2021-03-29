@@ -7,7 +7,6 @@ import 'react-h5-audio-player/lib/styles.css';
 import styleMusic from './Music.module.scss';
 
 export const Music = (props) => {
-  console.log('Music', props);
   const myMusic =
     props.musicPage && props.musicPage.musicData
       ? props.musicPage.musicData.map((s) => {

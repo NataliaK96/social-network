@@ -5,7 +5,6 @@ import { Button } from '../Button/Button';
 import style from './Users.module.scss';
 
 export const User = ({ user, followingInProgress, unfollow, follow }) => {
-  console.log('user.id', user)
   const path = '/profile/' + user.id;
   return (
     <div>

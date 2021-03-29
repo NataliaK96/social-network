@@ -3,7 +3,7 @@ import '../../assets/colors.scss'
 
 export const useStyles = makeStyles((theme) => ({
   delete: {
-    backgroundColor: '#ce8e82bd',
+    backgroundColor: '#f9796091',
   },
   close: {
     width: '30px',

@@ -2,18 +2,20 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { ContentBox } from '../../../../components/ContentBox/ContentBox';
 import { Textarea } from '../../../../components/FormsControls/FormsControls';
-import {
-  required,
-  maxLength,
-} from '../../../../utils/validators/validators';
+import { required, maxLength } from '../../../../utils/validators/validators';
 import { Post } from './Post/Post';
-//import style from './Posts.module.scss';
+import style from './Posts.module.scss';
 
-const maxLength300 = maxLength(300)
+const maxLength300 = maxLength(300);
 
 let AddNewPostForm = (props) => {
+  console.log('AddNewPostForm', props)
   return (
-    <form onSubmit={props.handleSubmit}>
+    <form onSubmit={(e)=>{
+      e.preventDefault()
+      props.handleSubmit()
+      props.reset()
+      }} className={style.form}>
       <Field
         name="newPostText"
         component={Textarea}
@@ -29,9 +31,13 @@ let AddNewPostFormRedux = reduxForm({ form: 'ProfileAddNewPostForm' })(
   AddNewPostForm
 );
 
-export const Posts = React.memo(props => {
+export const Posts = React.memo((props) => {
   let postsElements = props.postData.map((p) => (
-    <Post message={p.message} likeCount={p.likeCount} />
+    <Post
+      message={p.message}
+      likeCount={p.likeCount}
+      userAvatar={props.userAvatarSmall}
+    />
   ));
 
   let onAddPost = (values) => {
@@ -40,7 +46,9 @@ export const Posts = React.memo(props => {
 
   return (
     <ContentBox>
-      <AddNewPostFormRedux onSubmit={onAddPost} />
+      <ContentBox>
+        <AddNewPostFormRedux onSubmit={onAddPost} />
+      </ContentBox>
       <div>{postsElements}</div>
     </ContentBox>
   );

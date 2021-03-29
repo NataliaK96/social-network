@@ -6,6 +6,7 @@ const mapStateToProps = (state) => {
   return {
     postData: state.profilePage.postsData,
     newPostText: state.profilePage.newPostText,
+    userAvatarSmall: state.profilePage.profile.photos && state.profilePage.profile.photos.small
   };
 };
 

@@ -5,7 +5,6 @@ import { setMusic } from '../../redux/musicReducer';
 import { withAuthRedirect } from '../../hoc/withAuthRedirect';
 
 let mapStateToProps = (state) => {
-    console.log('mapStateToProps',state )
   return {
     musicPage: state.musicPage,
   };

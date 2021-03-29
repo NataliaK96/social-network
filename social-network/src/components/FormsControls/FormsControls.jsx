@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './FormsControls.module.scss';
 import { Field } from 'redux-form';
+import { MultilineTextFields } from '../TextField/Textarea';
 
 const FormControl = ({ input, meta, child, ...props }) => {
   const hasError = meta.touched && meta.error;
@@ -16,7 +17,7 @@ export const Textarea = (props) => {
   const { input, meta, child, ...restProps } = props;
   return (
     <FormControl {...props}>
-      <textarea {...input} {...restProps} />
+      <MultilineTextFields {...input} {...restProps}/>
     </FormControl>
   );
 };
