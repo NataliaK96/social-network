@@ -1,9 +1,9 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
-import { styleTextarea } from './Textarea.styles';
+import { useStyles } from './Textarea.styles';
 
 export const MultilineTextFields = (props) => {
-  const classes = styleTextarea();
+  const classes = useStyles();
   return (
     <TextField
       id="outlined-textarea"

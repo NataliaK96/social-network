@@ -10,16 +10,14 @@ const SAVE_PHOTO_SUCCESS = 'SAVE-PHOTO-SUCCESS';
 
 let initialState = {
   postsData: [
-    { id: 1, message: "It's my first post", likeCount: 12 },
-    { id: 2, message: 'Ho ho ho!', likeCount: 20 },
-    { id: 3, message: 'Darat', likeCount: 128 },
-    { id: 4, message: 'Home!', likeCount: 0 },
+    { id: 1, message: "It's my first post"},
+    { id: 2, message: 'Hello friends!'},
   ],
   profile: {
     userId: null,
     lookingForAJob: '',
     lookingForAJobDescription: '',
-    fullName: '',
+    fullName: 'Nickname',
     contacts: {
       github: '',
       vk: '',
@@ -39,9 +37,8 @@ const profileReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_POST: {
       let newPost = {
-        id: 5,
+        id: (new Date()).getTime(),
         message: action.newPostText,
-        likeCount: 0,
       };
       return {
         ...state,

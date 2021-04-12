@@ -5,10 +5,10 @@ import App from '../App';
 
 let state = {
   postsData: [
-    { id: 1, message: "It's my first post", likeCount: 12 },
-    { id: 2, message: 'Hello friends!', likeCount: 20 },
-    { id: 3, message: '^_^', likeCount: 128 },
-    { id: 4, message: 'Good morning!', likeCount: 0 },
+    { id: 1, message: "It's my new post"},
+    { id: 2, message: 'Hello friends!'},
+    { id: 3, message: '111'},
+    { id: 4, message: 'Good morning!'},
   ],
 };
 

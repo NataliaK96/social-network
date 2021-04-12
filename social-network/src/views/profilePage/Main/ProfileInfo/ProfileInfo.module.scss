@@ -35,10 +35,16 @@
   height: fit-content;
 
   .name {
+    display: flex;
+    max-width: 250px;
+    height: 16px;
+    padding: 4px 16px 4px 16px;
+    margin: 5px 0 5px 0;
     font-size: 20px;
   }
 
   .infoBlock {
+    width: 250px;
     display: flex;
     max-width: 250px;
     height: 16px;
@@ -81,6 +87,7 @@
 }
 
 .statusInput {
+  min-width: 250px;
   outline: none;
   box-shadow: $shadow;
   border-radius: 4px;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { Button } from '../../../../components/Button/Button';
 import { ContentBox } from '../../../../components/ContentBox/ContentBox';
 import { Textarea } from '../../../../components/FormsControls/FormsControls';
 import { required, maxLength } from '../../../../utils/validators/validators';
@@ -9,7 +10,6 @@ import style from './Posts.module.scss';
 const maxLength300 = maxLength(300);
 
 let AddNewPostForm = (props) => {
-  console.log('AddNewPostForm', props)
   return (
     <form onSubmit={(e)=>{
       e.preventDefault()
@@ -22,7 +22,7 @@ let AddNewPostForm = (props) => {
         validate={[required, maxLength300]}
         placeholder={'Post message'}
       />
-      <button>Add post</button>
+      <button className={style.submit}><Button styleType="send">Add post</Button></button>
     </form>
   );
 };
@@ -35,8 +35,10 @@ export const Posts = React.memo((props) => {
   let postsElements = props.postData.map((p) => (
     <Post
       message={p.message}
-      likeCount={p.likeCount}
       userAvatar={props.userAvatarSmall}
+      delete={props.deletePost}
+      id={p.id}
+      key={p.id}
     />
   ));
 
@@ -49,7 +51,7 @@ export const Posts = React.memo((props) => {
       <ContentBox>
         <AddNewPostFormRedux onSubmit={onAddPost} />
       </ContentBox>
-      <div>{postsElements}</div>
+      <div className={style.posts}>{postsElements}</div>
     </ContentBox>
   );
 });

@@ -3,3 +3,11 @@
   flex-direction: row;
   justify-content: space-between;
 }
+.posts {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.submit {
+  background-color: transparent;
+  border: none;
+}

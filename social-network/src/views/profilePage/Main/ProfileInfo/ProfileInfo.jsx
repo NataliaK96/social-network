@@ -67,7 +67,7 @@ export const ProfileInfo = (props) => {
           <div className={style.userDescripshion}>
             <div className={style.userInfo + ' ' + style.border}>
               <p className={style.label}>Nickname:</p>
-              <div className={style.name + ' ' + style.infoBlock}>{props.profile.fullName}</div>
+              <div className={style.name}>{props.profile.fullName}</div>
             </div>
             <div className={style.border}>
               <div className={style.userInfo}>

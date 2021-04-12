@@ -19,6 +19,8 @@ export const useStyles = makeStyles((theme) => ({
   },
   send: {
     backgroundColor: '#84deb2ab',
+    height: '42px',
+    width: '100px',
   },
   login: {
     backgroundColor: '#20d665',

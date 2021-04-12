@@ -1,12 +1,10 @@
-import { makeStyles } from '@material-ui/core/styles';
-import '../../assets/colors.scss'
+import { createStyles, makeStyles } from '@material-ui/core/styles';
 
-export const styleTextarea = makeStyles((theme) => ({
+export const useStyles = makeStyles((theme) =>
+  createStyles({
     root: {
-        '& .MuiTextField-root': {
-          margin: theme.spacing(1),
-          width: '40ch',
-        },
-      },
-  }));
-  
+      margin: theme.spacing(1),
+      width: '600px',
+    },
+  })
+);

@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import style from './Header.module.scss';
 
 let languages = ['en', 'ru', 'be'];
@@ -9,13 +8,10 @@ export const Header = (props) => {
     <header className={style.header}>
       <h1 className={style.h1}>Social Network</h1>
       <div className={style.loginBlock}>
-        {props.isAuth ? (
+        {props.isAuth && (
           <div>
-            {props.login}
             <button onClick={props.logout}>Logout</button>
           </div>
-        ) : (
-          <NavLink to={'/login'}>L</NavLink>
         )}
       </div>
       <div className={style.language}>

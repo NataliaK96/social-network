@@ -1,19 +1,19 @@
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import { Music } from './Music';
-import { setMusic } from '../../redux/musicReducer';
-import { withAuthRedirect } from '../../hoc/withAuthRedirect';
+import { Friends } from './Friends';
+import { setFriends } from '../../../redux/friendsReducer';
+import { withAuthRedirect } from '../../../hoc/withAuthRedirect';
 
 let mapStateToProps = (state) => {
   return {
-    musicPage: state.musicPage,
+    friendsPage: state.friendsPage,
   };
 };
 
 let mapDispatchToProps = (dispatch) => {
   return {
-    setMusic: (newMusicData) => {
-      dispatch(setMusic(newMusicData));
+    setFriends: (newFriendsData) => {
+      dispatch(setFriends(newFriendsData));
     },
   };
 };
@@ -21,4 +21,4 @@ let mapDispatchToProps = (dispatch) => {
 export const MusicContainer = compose(
   connect(mapStateToProps, mapDispatchToProps),
   withAuthRedirect
-)(Music);
+)(Friends);
