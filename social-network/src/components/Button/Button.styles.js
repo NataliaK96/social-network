@@ -5,13 +5,18 @@ export const useStyles = makeStyles((theme) => ({
   delete: {
     backgroundColor: '#f9796091',
   },
+  cancel: {
+    width: '98px',
+    backgroundColor: '#f9796091',
+  },
   close: {
     width: '30px',
     cursor: 'pointer'
   },
-  upload: {
+  add: {
     backgroundColor: '#579979',
-    color: '#ffffff'
+    width: '98px',
+    color: '#ffffff',
   },
   save: {
     backgroundColor: '#579979',

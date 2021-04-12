@@ -5,9 +5,7 @@ import { Main } from './views/profilePage/Main/Main';
 import { Navbar } from './components/Navigation/Navbar';
 import { Redirect, Route, withRouter } from 'react-router-dom';
 import { Friends } from './views/friendsPage/Friends/Friends';
-import { Settings } from './views/settingsPage/Settings';
 import { Find } from './views/friendsPage/Friends/Find';
-import { Help } from './views/helpPage/Help/Help';
 import Login from './components/Login/Login';
 import { Component } from 'react';
 import { connect } from 'react-redux';
@@ -55,10 +53,7 @@ class App extends Component {
                 path="/friends/find"
                 render={() => <Find store={this.props.store} />}
               />
-
               <Route path="/music" render={() => <MusicContainer />} />
-              <Route path="/settings" render={() => <Settings />} />
-              <Route path="/help" render={() => <Help />} />
             </Main>
           </div>
         ) : (

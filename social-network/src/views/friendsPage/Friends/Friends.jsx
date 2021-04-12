@@ -26,7 +26,10 @@ export const Friends = (props) => {
 
   return (
     <ContentBox className={style.friends}>
+      <div className={style.name}>
+        <h4>My friends</h4>
       <SearchFriends/>
+      </div>
       {myFriends}
     </ContentBox>
   );

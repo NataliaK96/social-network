@@ -4,7 +4,7 @@ export const useStyles = makeStyles((theme) =>
   createStyles({
     root: {
       margin: theme.spacing(1),
-      width: '600px',
+      width: '30em',
     },
   })
 );

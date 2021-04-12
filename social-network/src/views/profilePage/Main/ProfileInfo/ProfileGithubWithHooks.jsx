@@ -6,7 +6,7 @@ export const ProfileGithubWithHooks = (props) => {
   let [github, setGithub] = useState(props.github);
 
   useEffect(() => {
-    setGithub(props.github || 'add a link to your GitHub repository');
+    setGithub(props.github || 'None selected');
   }, [props.github]);
 
   const activateEditMode = () => {

@@ -2,7 +2,6 @@ import React from 'react';
 import { Button as ButtonBase } from '@material-ui/core';
 import { useStyles } from './Button.styles';
 import DeleteIcon from '@material-ui/icons/Delete';
-import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 import SaveIcon from '@material-ui/icons/Save';
 
 export const Button = (props) => {
@@ -15,11 +14,13 @@ export const Button = (props) => {
       startIcon = <DeleteIcon />;
       className = classes.delete;
       break;
+      case 'cancel':
+      className = classes.cancel;
+      break;
     case 'close':
       return <img src="/close.png" alt="close" className={classes.close} />;
-    case 'upload':
-      className = classes.upload;
-      startIcon = <CloudUploadIcon />;
+    case 'add':
+      className = classes.add;
       break;
     case 'save':
       className = classes.save;

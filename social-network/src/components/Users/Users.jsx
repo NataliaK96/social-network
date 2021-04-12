@@ -1,6 +1,7 @@
 import React from 'react';
 import { Paginator } from './Paginator';
 import { User } from './User';
+import style from './Users.module.scss';
 
 export const Users = ({
   currentPage,
@@ -12,12 +13,15 @@ export const Users = ({
 }) => {
   return (
     <div>
+      <div className={style.name}>
+        <h4>Users</h4>
       <Paginator
         currentPage={currentPage}
         onPageChanged={onPageChanged}
         totalUsersCount={totalUsersCount}
         pageSize={pageSize}
-      />
+        />
+        </div>
       {users.map(u => 
         <User
           user={u}

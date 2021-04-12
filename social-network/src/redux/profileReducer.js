@@ -29,7 +29,7 @@ let initialState = {
       mainLink: ''
     },
   },
-  status: 'write status',
+  status: 'None selected',
   theme: themes[0],
 };
 

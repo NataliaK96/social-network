@@ -1,5 +1,4 @@
 import React from 'react';
-import styleFriends from '../../views/friendsPage/Friends/Friends.module.scss';
 import { NavLink } from 'react-router-dom';
 import { Button } from '../Button/Button';
 import style from './Users.module.scss';
@@ -8,23 +7,19 @@ export const User = ({ user, followingInProgress, unfollow, follow }) => {
   const path = '/profile/' + user.id;
   return (
     <div>
-      <NavLink className={styleFriends.user} to={path}>
-        <div className={styleFriends.userName}>
+      <NavLink className={style.user} to={path}>
+        <div className={style.userName}>
           <img
-            className={styleFriends.avatar}
+            className={style.avatar}
             src={user.photos.small != null ? user.photos.small : '/user.png'}
             alt="avatar"
           />
-          <span>
-            <p>{user.name}</p>
-            <p className={style.location}>
-              {'user.location.city'}, {'user.location.country'}
-            </p>
-          </span>
+          <span>{user.name}</span>
         </div>
         <div className={style.buttons}>
           {user.followed ? (
-            <button
+            <Button
+              styleType="cancel"
               disabled={followingInProgress.some((id) => id === user.id)}
               onClick={(e) => {
                 e.preventDefault();
@@ -32,9 +27,10 @@ export const User = ({ user, followingInProgress, unfollow, follow }) => {
               }}
             >
               Unfriend
-            </button>
+            </Button>
           ) : (
-            <button
+            <Button
+              styleType="add"
               disabled={followingInProgress.some((id) => id === user.id)}
               onClick={(e) => {
                 e.preventDefault();
@@ -42,14 +38,8 @@ export const User = ({ user, followingInProgress, unfollow, follow }) => {
               }}
             >
               Add friend
-            </button>
+            </Button>
           )}
-          <button>Write message</button>
-          <Button styleType="delete">delete</Button>
-          <Button styleType="upload">upload</Button>
-          <Button styleType="save">save</Button>
-          <Button styleType="send">send</Button>
-          <Button styleType="default">default</Button>
         </div>
       </NavLink>
     </div>

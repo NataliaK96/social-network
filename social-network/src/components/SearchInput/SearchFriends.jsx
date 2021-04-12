@@ -7,7 +7,7 @@ const SearchFriends = () => {
   let path = '/friends/find';
   return (
     <div className={style.iconButton}>
-      <NavLink to={path}>
+      <NavLink to={path} className={style.nav}>
         <Button styleType="default">
           Search friends
         </Button>
