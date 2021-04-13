@@ -10,14 +10,14 @@ export const Header = (props) => {
       <div className={style.loginBlock}>
         {props.isAuth && (
           <div>
-            <button onClick={props.logout}>Logout</button>
+            <button className={style.logout} onClick={props.logout}>Logout</button>
           </div>
         )}
       </div>
-      <div className={style.language}>
-        <select name="lang">
+      <div>
+        <select name="lang" className={style.languages}>
           {languages.map((l) => (
-            <option value={l} selected={l === 'ru'} onClick={() => {}}>
+            <option className={style.language} value={l} selected={l === 'ru'} onClick={() => {}}>
               {l}
             </option>
           ))}

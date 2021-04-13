@@ -14,10 +14,10 @@ const FormControl = ({ input, meta, child, ...props }) => {
 };
 
 export const Textarea = (props) => {
-  const { input, meta, child, ...restProps } = props;
+  const { input, meta, child, label, ...restProps } = props;
   return (
     <FormControl {...props}>
-      <MultilineTextFields {...input} {...restProps}/>
+      <MultilineTextFields {...input} {...restProps} label={label}/>
     </FormControl>
   );
 };

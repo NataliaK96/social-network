@@ -4,6 +4,7 @@ import { Preloader } from '../../../../components/Preloader/Preloader';
 import { ProfileStatusWithHooks } from './ProfileStatusWithHooks';
 import { ThemesModal } from '../../Themes/ThemesModal';
 import { ProfileGithubWithHooks } from './ProfileGithubWithHooks';
+import { ProfileFullNameWithHooks } from './ProfileFullNameWithHooks';
 
 export const ProfileInfo = (props) => {
   const [showModal, setShowModal] = useState(false);
@@ -67,7 +68,12 @@ export const ProfileInfo = (props) => {
           <div className={style.userDescripshion}>
             <div className={style.userInfo + ' ' + style.border}>
               <p className={style.label}>Nickname:</p>
-              <div className={style.name}>{props.profile.fullName}</div>
+              <ProfileFullNameWithHooks
+                  profile={props.profile}
+                  fullname={props.profile.fullName}
+                  isOwner={props.isOwner}
+                  updateProfile={props.updateProfile}
+                />
             </div>
             <div className={style.border}>
               <div className={style.userInfo}>
@@ -102,13 +108,3 @@ export const ProfileInfo = (props) => {
   );
 };
 
-// const ProfileData = ({profile}) => {
-//   return <div>
-//   <b>Contact</b>: {profile.contacts.github}
-// </div>
-// }
-// const ProfileDataForm = ({profile}) => {
-//   return <div>
-//   <b>Contact</b>: {profile.contacts.github}
-// </div>
-// }

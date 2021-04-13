@@ -16,7 +16,7 @@ export const Profile = (props) => {
         setTheme = {props.setTheme}
         updateProfile={props.updateProfile}
       />
-      <PostsContainer />
+      <PostsContainer isOwner={props.isOwner}/>
     </div>
   );
 };

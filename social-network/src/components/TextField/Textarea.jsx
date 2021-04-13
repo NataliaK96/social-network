@@ -7,8 +7,7 @@ export const MultilineTextFields = (props) => {
   return (
     <TextField
       id="outlined-textarea"
-      label="Post message"
-      placeholder="Post message"
+      label={props.label}
       multiline
       variant="outlined"
       className={classes.root}

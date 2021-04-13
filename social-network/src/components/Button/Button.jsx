@@ -14,7 +14,7 @@ export const Button = (props) => {
       startIcon = <DeleteIcon />;
       className = classes.delete;
       break;
-      case 'cancel':
+    case 'cancel':
       className = classes.cancel;
       break;
     case 'close':

@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import style from './ProfileInfo.module.scss';
 
-export const ProfileGithubWithHooks = (props) => {
+export const ProfileFullNameWithHooks = (props) => {
   let [editMode, setEditMode] = useState(false);
-  let [github, setGithub] = useState(props.github);
+  let [fullname, setFullname] = useState(props.fullname);
 
   useEffect(() => {
-    setGithub(props.github || 'None selected');
-  }, [props.github]);
+    setFullname(props.fullname || 'Nickname');
+  }, [props.fullname]);
 
   const activateEditMode = () => {
     props.isOwner && setEditMode(true);
@@ -18,35 +18,31 @@ export const ProfileGithubWithHooks = (props) => {
       setEditMode(false);
       props.updateProfile({
         ...props.profile,
-        aboutMe: 'no value',
-        lookingForAJobDescription: 'no value',
-        contacts: {
-          ...props.profile.contacts,
-          github: github,
-        },
+        fullName: fullname,
       });
     }
   };
 
-  const onGithubChange = (e) => {
-    setGithub(e.currentTarget.value);
+  const onFullnameChange = (e) => {
+    setFullname(e.currentTarget.value);
   };
 
   return (
     <div className={style.infoBlock}>
       {!editMode ? (
         <div className={style.status} onClick={activateEditMode}>
-          {github}
+          {fullname}
         </div>
       ) : (
         <input
           className={style.statusInput}
-          onChange={onGithubChange}
+          onChange={onFullnameChange}
           autoFocus={true}
           onKeyPress={deactivateEditMode}
-          value={github}
+          value={fullname}
         />
       )}
     </div>
   );
 };
+

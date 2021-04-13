@@ -11,18 +11,22 @@ const maxLength300 = maxLength(300);
 
 let AddNewPostForm = (props) => {
   return (
-    <form onSubmit={(e)=>{
-      e.preventDefault()
-      props.handleSubmit()
-      props.reset()
-      }} className={style.form}>
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        props.handleSubmit();
+        props.reset();
+      }}
+      className={style.form}
+    >
       <Field
         name="newPostText"
-        component={Textarea}
+        component={(props)=><Textarea {...props} label={'New post'}/>}
         validate={[required, maxLength300]}
-        placeholder={'Post message'}
       />
-      <button className={style.submit}><Button styleType="send">Add post</Button></button>
+      <button className={style.submit}>
+        <Button styleType="send">Add post</Button>
+      </button>
     </form>
   );
 };
@@ -48,9 +52,11 @@ export const Posts = React.memo((props) => {
 
   return (
     <ContentBox>
-      <ContentBox>
-        <AddNewPostFormRedux onSubmit={onAddPost} />
-      </ContentBox>
+      {props.isOwner && (
+        <ContentBox>
+          <AddNewPostFormRedux onSubmit={onAddPost} />
+        </ContentBox>
+      )}
       <div className={style.posts}>{postsElements}</div>
     </ContentBox>
   );
