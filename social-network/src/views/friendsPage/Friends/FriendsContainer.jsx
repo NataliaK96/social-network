@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { Friends } from './Friends';
-import { setFriends } from '../../../redux/friendsReducer';
+import { getFriends, deleteFriend } from '../../../redux/friendsReducer';
 import { withAuthRedirect } from '../../../hoc/withAuthRedirect';
 
 let mapStateToProps = (state) => {
@@ -12,13 +12,16 @@ let mapStateToProps = (state) => {
 
 let mapDispatchToProps = (dispatch) => {
   return {
-    setFriends: (newFriendsData) => {
-      dispatch(setFriends(newFriendsData));
+    getFriends: () => {
+      dispatch(getFriends());
+    },
+    deleteFriend: (id) => {
+      dispatch(deleteFriend(id));
     },
   };
 };
 
-export const MusicContainer = compose(
+export const FriendsContainer = compose(
   connect(mapStateToProps, mapDispatchToProps),
   withAuthRedirect
 )(Friends);

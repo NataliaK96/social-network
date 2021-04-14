@@ -8,17 +8,6 @@ let store = {
   _state: {
     profilePage: null,
     messagesPage: {
-      dialogsData: [
-        { id: 1, name: 'Sveta Volkova' },
-        { id: 2, name: 'Olya Kolobok' },
-        { id: 3, name: 'Vlad Dimuch' },
-        { id: 4, name: 'Sergey Komarov' },
-      ],
-      messagesData: [
-        { id: 1, message: 'Hello' },
-        { id: 2, message: 'How are you?' },
-        { id: 3, message: 'Ok' },
-      ],
       newMessageBody: '',
     },
     sidebar: {},

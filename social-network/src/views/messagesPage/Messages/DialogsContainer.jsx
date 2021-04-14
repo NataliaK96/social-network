@@ -1,8 +1,9 @@
 import { connect } from 'react-redux';
+import { compose } from 'redux';
 import { sendMessageCreator } from '../../../redux/messagesReducer';
 import { Dialogs } from './Dialogs';
 import { withAuthRedirect } from '../../../hoc/withAuthRedirect';
-import { compose } from 'redux';
+import { getFriends} from '../../../redux/messagesReducer';
 
 let mapStateToProps = (state) => {
   return {
@@ -12,6 +13,9 @@ let mapStateToProps = (state) => {
 
 let mapDispatchToProps = (dispatch) => {
   return {
+    getFriends: () => {
+      dispatch(getFriends());
+    },
     sendMessage: (newMessageBody) => {
       dispatch(sendMessageCreator(newMessageBody));
     },

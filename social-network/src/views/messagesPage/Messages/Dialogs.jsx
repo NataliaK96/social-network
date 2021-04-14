@@ -1,29 +1,36 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import style from './Dialogs.module.scss';
 import { DialogItem } from './DialogItem/DialogItem';
 import { Message } from './Message/Message';
 import { ContentBox } from '../../../components/ContentBox/ContentBox';
-import { Redirect } from 'react-router-dom';
 import { AddMessageFormRedux } from './AddMessageForm';
 
-export const Dialogs = (props) => {
-  let state = props.messagesPage;
-  let messagesElement = state.messagesData.map((m) => (
-    <div className={style.messageItem}>
-      <Message message={m.message} />
-    </div>
-  ));
-  let dialogsElements = state.dialogsData.map((d) => (
-    <div className={style.dialogsItem}>
-      <DialogItem name={d.name} id={d.id} />
-    </div>
-  ));
+export const Dialogs = ({ messagesPage, getFriends, sendMessage }) => {
+  useEffect(() => {
+    getFriends();
+  }, [getFriends]);
+
+  const messagesElement =
+    messagesPage &&
+    messagesPage.messagesData.map((m) => (
+      <div className={style.messageItem}>
+        <Message message={m.message} />
+      </div>
+    ));
+
+  const dialogsElements =
+    messagesPage &&
+    messagesPage.friendsData.map((f) => {
+      return (
+        <div className={style.dialogsItem}>
+          <DialogItem name={f.fullName} src={f.photos.small} id={f.userId} />
+        </div>
+      );
+    });
 
   let addNewMessage = (value) => {
-    props.sendMessage(value.newMessageBody);
+    sendMessage(value.newMessageBody);
   };
-
-  if (!props.isAuth) return <Redirect to={'/Login'} />;
 
   return (
     <ContentBox className={style.dialogs}>

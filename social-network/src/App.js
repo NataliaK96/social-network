@@ -4,7 +4,6 @@ import HeaderContainer from './components/Header/HeaderContainer';
 import { Main } from './views/profilePage/Main/Main';
 import { Navbar } from './components/Navigation/Navbar';
 import { Redirect, Route, withRouter } from 'react-router-dom';
-import { Friends } from './views/friendsPage/Friends/Friends';
 import { Find } from './views/friendsPage/Friends/Find';
 import Login from './components/Login/Login';
 import { Component } from 'react';
@@ -15,6 +14,7 @@ import { Preloader } from './components/Preloader/Preloader';
 import { DialogsContainer } from './views/messagesPage/Messages/DialogsContainer';
 import { withSuspense } from './hoc/withSuspense';
 import { MusicContainer } from './views/musicPage/MusicContainer';
+import { FriendsContainer } from './views/friendsPage/Friends/FriendsContainer';
 
 const ProfileContainer = React.lazy(() =>
   import('./views/profilePage/Main/Profile/ProfileContainer')
@@ -47,7 +47,7 @@ class App extends Component {
               <Route
                 exact
                 path="/friends"
-                render={() => <Friends store={this.props.store} />}
+                render={() => <FriendsContainer store={this.props.store} />}
               />
               <Route
                 path="/friends/find"

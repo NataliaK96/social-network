@@ -10,7 +10,7 @@ export const DialogItem = (props) => {
       className={[style.dialog, style.name, style.active].join(' ')}
       to={path}
     >
-      <img className={style.avatar} src="/user.png" alt="avatar" />
+      <img className={style.avatar} src={props.src} alt="avatar" />
       <p>{props.name}</p>
     </NavLink>
   );
