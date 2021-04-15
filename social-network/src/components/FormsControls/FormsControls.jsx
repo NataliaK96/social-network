@@ -32,7 +32,7 @@ export const Input = (props) => {
 };
 
 export const createField = (name, component, validate, type, placeholder, text = '') => (
-  <div>
+  <div className={style.field}>
     <Field
       name={name}
       component={component}

@@ -23,6 +23,7 @@ let AddNewPostForm = (props) => {
         name="newPostText"
         component={(props)=><Textarea {...props} label={'New post'}/>}
         validate={[required, maxLength300]}
+        className={style.field}
       />
       <button className={style.submit}>
         <Button styleType="send">Add post</Button>
@@ -53,7 +54,7 @@ export const Posts = React.memo((props) => {
   return (
     <ContentBox>
       {props.isOwner && (
-        <ContentBox>
+        <ContentBox className={style.contentBox}>
           <AddNewPostFormRedux onSubmit={onAddPost} />
         </ContentBox>
       )}

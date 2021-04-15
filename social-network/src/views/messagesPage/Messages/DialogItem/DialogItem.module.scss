@@ -2,8 +2,7 @@
 
 .dialog {
   margin: 20px;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
+  display: flex;
   align-items: center;
 }
 

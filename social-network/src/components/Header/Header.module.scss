@@ -1,12 +1,11 @@
 @import '../../assets/colors.scss';
 .header {
-  grid-area: header;
   background-color: $green;
   height: 40px;
   font-size: 14px;
   display: flex;
   flex-direction: row;
-  padding-left: 5%;
+  padding: 0 5%;
   align-items: center;
   font-family: 'Arizonia', cursive;
   font-size: 26px;

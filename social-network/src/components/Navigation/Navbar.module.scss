@@ -1,8 +1,9 @@
 @import '../../assets/colors.scss';
 
 .nav {
-  grid-area: nav;
   line-height: 34px;
+  width: 18%;
+  margin-right: 30px;
 }
 .icon {
   width: 24px;

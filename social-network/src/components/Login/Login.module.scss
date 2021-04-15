@@ -17,15 +17,16 @@
   }
 }
 .loginField {
-  display: grid;
-  grid-row-gap: 20px;
   margin: 20px;
 }
 .remember {
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: center;
+  margin: 8px 0;
+}
+.rememberMe {
+  padding-top: 2px;
 }
 .loginButtonDiv {
   text-align: center;

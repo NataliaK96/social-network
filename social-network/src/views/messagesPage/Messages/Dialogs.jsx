@@ -36,6 +36,9 @@ export const Dialogs = ({ messagesPage, getFriends, sendMessage }) => {
     <ContentBox className={style.dialogs}>
       <div className={style.dialogsItems}>{dialogsElements}</div>
       <div className={style.messages}>
+      <div className={style.incomingMessage}>
+      <div className={style.incomingMessageItem}>Hello, friend!</div>
+      <div className={style.incomingMessageItem}>long time no see</div></div>
         <div className={style.messagesElement}>{messagesElement}</div>
         <div className={style.enterMessage}>
           <AddMessageFormRedux onSubmit={addNewMessage} />

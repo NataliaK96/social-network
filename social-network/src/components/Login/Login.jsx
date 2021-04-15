@@ -15,12 +15,14 @@ const LoginForm = ({ handleSubmit, error }) => {
       {createField('email', Input, [required], 'email', 'Email')}
       {createField('password', Input, [required], 'password', 'Password')}
       <div className={style.remember}>
-      {createField('rememberMe', Input, null, 'checkbox', null)}
-      Remember me
+        {createField('rememberMe', Input, null, 'checkbox', null)}
+        <span className={style.rememberMe}>Remember me</span>
       </div>
       {error && <div className={styleForm.formSummaryError}>{error}</div>}
       <div className={style.loginButtonDiv}>
-      <Button type='submit' styleType="login" className={style.loginButton}>Login</Button>
+        <Button type="submit" styleType="login" className={style.loginButton}>
+          Login
+        </Button>
       </div>
     </form>
   );
@@ -38,10 +40,10 @@ const Login = (props) => {
   }
   return (
     <div className={style.login_wrapper}>
-    <div className={style.loginForm}>
-      <h1>Welcome!</h1>
-      <LoginReduxForm onSubmit={onSubmit} />
-    </div>
+      <div className={style.loginForm}>
+        <h1>Welcome!</h1>
+        <LoginReduxForm onSubmit={onSubmit} />
+      </div>
     </div>
   );
 };
