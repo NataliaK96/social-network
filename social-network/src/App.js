@@ -20,6 +20,15 @@ const ProfileContainer = React.lazy(() =>
   import('./views/profilePage/Main/Profile/ProfileContainer')
 );
 class App extends Component {
+constructor(props){
+  super(props);
+  this.state={isOpenedMenu: false}
+}
+
+showMenu = (isShow) => {
+  this.setState({isOpenedMenu: isShow})
+}
+
   componentDidMount() {
     this.props.initializeApp();
   }
@@ -30,11 +39,11 @@ class App extends Component {
 
     return (
       <div className={style.app_wrapper}>
-        <HeaderContainer />
+        <HeaderContainer isOpenedMenu={this.state.isOpenedMenu} onShowMenu={this.showMenu} />
         <Route path="/login" render={() => <Login />} />
         {this.props.isAuth ? (
           <div className={style.app_main}>
-            <Navbar />
+           {this.state.isOpenedMenu && <Navbar />}
             <Main>
               <Route
                 path="/profile/:userId?"

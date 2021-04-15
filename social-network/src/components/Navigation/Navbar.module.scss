@@ -4,6 +4,15 @@
   line-height: 34px;
   width: 18%;
   margin-right: 30px;
+  @media (max-width: 700px) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    background-color: $beige;
+    padding: 20px 20px 20px 5%;
+    box-shadow: $shadow;
+  }
 }
 .icon {
   width: 24px;

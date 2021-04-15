@@ -6,10 +6,16 @@
   display: flex;
   flex-direction: row;
   padding: 0 5%;
-  align-items: center;
   font-family: 'Arizonia', cursive;
   font-size: 26px;
   color: white;
+}
+.headerItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
 }
 .logo {
   height: 24px;
@@ -18,9 +24,16 @@
   flex-grow: 1;
 }
 .loginBlock {
-  margin-right: 20px;
+  display: flex;
+  flex-direction: row;
+}
+.hBlock {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 .logout {
+  height: 26px;
   background-color: transparent;
   color: white;
   border: 1px solid white;
@@ -33,6 +46,9 @@
   }
 }
 .languages {
+  margin-top: 2px;
+  height: 26px;
+  margin-left: 20px;
   background-color: transparent;
   color: white;
   border: 1px solid white;
@@ -43,4 +59,16 @@
 }
 .language {
   color: rgb(0, 0, 0);
+}
+.icon {
+  margin-right: 12px;
+  &:hover {
+    cursor: pointer;
+  }
+  @media (min-width: 700px) {
+    display: none;
+  }
+}
+.imgIcon {
+  padding-top: 3px;
 }
