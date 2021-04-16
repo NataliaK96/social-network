@@ -25,12 +25,22 @@ constructor(props){
   this.state={isOpenedMenu: false}
 }
 
+onResize = () => {
+  console.log(document.body.clientWidth)
+  document.body.clientWidth >= 700 && this.setState({isOpenedMenu: true})
+}
+
+componentWillUnmount(){
+  window.removeEventListener('resize', this.onResize)
+}
+
 showMenu = (isShow) => {
   this.setState({isOpenedMenu: isShow})
 }
 
   componentDidMount() {
     this.props.initializeApp();
+    window.addEventListener('resize', this.onResize)
   }
   render() {
     if (!this.props.initialized) {

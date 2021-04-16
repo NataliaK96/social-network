@@ -12,6 +12,9 @@
 
 .formControl {
   width: 100%;
+  @media (max-width: 500px) {
+    margin-bottom: 8px;
+  }
 }
 .formControl.error input,
 .formControl.error textarea {

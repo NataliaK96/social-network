@@ -12,6 +12,10 @@
 }
 .window {
   max-width: 50%;
+  @media (max-width: 500px) {
+    margin: 10px 0;
+    max-width: 74%;
+  }
 }
 .themeItemContainer {
   border-radius: 8px;
@@ -35,6 +39,9 @@
   overflow: auto;
   scrollbar-width: thin;
   margin: 10px;
+  @media (max-width: 500px) {
+    margin: 4px;
+  }
 }
 .button {
   display: flex;

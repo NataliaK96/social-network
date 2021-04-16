@@ -52,7 +52,7 @@ export const Posts = React.memo((props) => {
   };
 
   return (
-    <ContentBox>
+    <ContentBox className={style.contentBox}>
       {props.isOwner && (
         <ContentBox className={style.contentBox}>
           <AddNewPostFormRedux onSubmit={onAddPost} />

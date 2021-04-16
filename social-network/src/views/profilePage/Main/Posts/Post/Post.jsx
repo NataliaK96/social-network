@@ -34,7 +34,7 @@ export const Post = (props) => {
               onClick={() => setLike(true)}
             />
           )}
-          <Button styleType="delete" onClick={()=>props.delete(props.id)}>delete</Button>
+          <Button className={style.delete} styleType="delete" onClick={()=>props.delete(props.id)}>delete</Button>
         </div>
       </div>
     </ContentBox>

@@ -4,11 +4,17 @@
   display: flex;
   flex-grow: 1;
   margin: 0 0 20px 0;
+  @media (max-width: 800px) {
+    padding: 0;
+  }
 }
 .dialogsItems {
   color: $rifle-green;
   font-weight: 500;
   border-right: 1px $coffee solid;
+  @media (max-width: 560px) {
+    width: 170px;
+  }
 }
 .messages {
   margin: 20px;
