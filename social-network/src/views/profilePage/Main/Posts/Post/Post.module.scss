@@ -13,18 +13,18 @@
   width: 50px;
   margin-right: 14px;
   box-shadow: $ava-shadow;
-  @media (max-width: 400px) {
+  @media (max-width: 450px) {
     display: none;
   }
 }
 .postElement {
   padding: 14px;
-  @media (max-width: 400px) {
+  @media (max-width: 450px) {
     padding: 4px;
   }
 }
 .delete {
-  @media (max-width: 400px) {
+  @media (max-width: 450px) {
     display: none;
   }
 }
@@ -32,7 +32,7 @@
   width: 24px;
   margin-right: 14px;
   cursor: pointer;
-  @media (max-width: 400px) {
+  @media (max-width: 450px) {
     margin: 0;
   }
 }

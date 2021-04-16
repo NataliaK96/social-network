@@ -37,7 +37,7 @@ export const Friends = ({ friendsPage, getFriends, deleteFriend }) => {
   return (
     <ContentBox className={style.friends}>
       <div className={style.name}>
-        <h4>My friends</h4>
+        <h4 className={style.p}>My friends</h4>
         <SearchFriends />
       </div>
       {myFriends}

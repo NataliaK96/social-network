@@ -14,7 +14,7 @@ export const Users = ({
   return (
     <div>
       <div className={style.name}>
-        <h4>Users</h4>
+        <h4 className={style.h}>Users</h4>
       <Paginator
         currentPage={currentPage}
         onPageChanged={onPageChanged}

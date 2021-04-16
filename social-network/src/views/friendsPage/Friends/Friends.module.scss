@@ -3,6 +3,9 @@
   flex-grow: 1;
   height: fit-content;
   margin: 0 0 20px 0;
+  @media (max-width: 450px) {
+    padding: 0;
+  }
 }
 .user {
   display: flex;
@@ -25,6 +28,10 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  @media (max-width: 500px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 .name {
   display: flex;
@@ -35,4 +42,9 @@
 h4 {
   color: $green;
   font-size: 20px;
+}
+.p {
+  @media (max-width: 450px) {
+    display: none;
+  }
 }

@@ -29,6 +29,9 @@
   &:hover {
     cursor: pointer;
   }
+  @media (max-width: 450px) {
+    margin: 0 1px;
+  }
 }
 .user {
   display: flex;
@@ -48,5 +51,13 @@
 }
 .userName {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  @media (max-width: 450px) {
+    flex-direction: column;
+  }
+}
+.h {
+  @media (max-width: 450px) {
+    display: none;
+  }
 }
