@@ -24,6 +24,7 @@ export const Users = ({
         </div>
       {users.map(u => 
         <User
+        
           user={u}
           followingInProgress={props.followingInProgress}     
           unfollow={props.unfollow}

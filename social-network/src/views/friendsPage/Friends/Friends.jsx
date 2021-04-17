@@ -15,7 +15,7 @@ export const Friends = ({ friendsPage, getFriends, deleteFriend }) => {
     friendsPage.friendsData.map((f) => {
       let path = '/profile/' + f.userId;
       return (
-        <NavLink className={style.user} to={path}>
+        <NavLink className={style.user} to={path} >
           <div className={style.divElement}>
             <img className={style.avatar} src={f.photos.small} alt="avatar" />
             <p>{f.fullName}</p>
