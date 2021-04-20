@@ -1,0 +1,50 @@
+@import '../../../assets/colors.scss';
+.friends {
+  flex-grow: 1;
+  height: fit-content;
+  margin: 0 0 20px 0;
+  @media (max-width: 450px) {
+    padding: 0;
+  }
+}
+.user {
+  display: flex;
+  color: $rifle-green;
+  font-weight: 500;
+  border-bottom: 1px $coffee solid;
+  text-decoration: none;
+  padding: 10px 0 10px 0;
+  margin: 8px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.avatar {
+  width: 50px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+.divElement {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  @media (max-width: 500px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.name {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px;
+}
+h4 {
+  color: $green;
+  font-size: 20px;
+}
+.p {
+  @media (max-width: 450px) {
+    display: none;
+  }
+}

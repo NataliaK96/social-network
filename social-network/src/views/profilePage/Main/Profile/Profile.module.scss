@@ -1,0 +1,6 @@
+.profile {
+  flex-grow: 1;
+  @media (max-width: 560px) {
+    width: 100%;
+  }
+}

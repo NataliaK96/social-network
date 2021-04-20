@@ -1,0 +1,28 @@
+@import '../../../../assets/colors.scss';
+
+.dialog {
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  @media (max-width: 700px) {
+    margin: 20px 0 20px 6px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+.avatar {
+  width: 50px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.name {
+  text-decoration: none;
+  color: $rifle-green;
+}
+
+.active {
+  color: $green;
+  font-size: 18px;
+}

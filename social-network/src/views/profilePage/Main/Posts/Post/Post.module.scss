@@ -1,0 +1,48 @@
+@import '../../../../../assets/colors.scss';
+.post {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media (max-width: 500px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.avatar {
+  border-radius: 50%;
+  width: 50px;
+  margin-right: 14px;
+  box-shadow: $ava-shadow;
+  @media (max-width: 450px) {
+    display: none;
+  }
+}
+.postElement {
+  padding: 14px;
+  @media (max-width: 450px) {
+    padding: 4px;
+  }
+}
+.delete {
+  @media (max-width: 450px) {
+    display: none;
+  }
+}
+.like {
+  width: 24px;
+  margin-right: 14px;
+  cursor: pointer;
+  @media (max-width: 450px) {
+    margin: 0;
+  }
+}
+.block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  @media (max-width: 500px) {
+    justify-content: space-between;
+    width: 90%;
+    margin: 10px;
+  }
+}

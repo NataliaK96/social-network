@@ -1,0 +1,63 @@
+@import '../../assets/colors.scss';
+.header {
+  background-color: $green;
+  height: 40px;
+  font-size: 14px;
+  display: flex;
+  flex-direction: row;
+  padding: 0 5%;
+  font-family: 'Arizonia', cursive;
+  font-size: 26px;
+  color: white;
+}
+.headerItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+.logo {
+  height: 24px;
+}
+.h1 {
+  flex-grow: 1;
+  @media (max-width: 450px) {
+    font-size: 20px;
+  }
+}
+.loginBlock {
+  display: flex;
+  flex-direction: row;
+}
+.hBlock {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.logout {
+  height: 26px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: 2px;
+  &:hover {
+    cursor: pointer;
+    color: $rifle-green;
+    border: 1px solid $rifle-green;
+    background-color: #9bd2b7;
+  }
+}
+
+.icon {
+  margin-right: 4px;
+  &:hover {
+    cursor: pointer;
+  }
+  @media (min-width: 700px) {
+    display: none;
+  }
+}
+.imgIcon {
+  padding-top: 3px;
+}

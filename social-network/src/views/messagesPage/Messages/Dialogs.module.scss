@@ -1,0 +1,81 @@
+@import '../../../assets/colors.scss';
+
+.dialogs {
+  display: flex;
+  flex-grow: 1;
+  margin: 0 0 20px 0;
+  @media (max-width: 800px) {
+    padding: 0;
+  }
+}
+.dialogsItems {
+  color: $rifle-green;
+  font-weight: 500;
+  border-right: 1px $coffee solid;
+  @media (max-width: 560px) {
+    width: 132px;
+  }
+}
+.messages {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: flex-end;
+  @media (max-width: 500px) {
+    margin: 20px 4px;
+  }
+}
+
+.messageItem {
+  margin: 8px;
+  padding: 0.5em 1em;
+  border-radius: 12px;
+  background-color: $green-transparent;
+  width: fit-content;
+}
+.incomingMessageItem {
+  margin: 8px;
+  padding: 0.5em 1em;
+  border-radius: 12px;
+  background-color: $green-transparent-my;
+  width: fit-content;
+}
+
+.enterMessage {
+  display: flex;
+  flex-direction: row;
+}
+
+.messagesElement {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.incomingMessage {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.submit {
+  background-color: transparent;
+  border: none;
+}
+.form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+  @media (max-width: 500px) {
+    flex-direction: column;
+  }
+}
+.field {
+  width: 100%;
+  margin-right: 30px;
+}
+.input {
+  flex-grow: 1;
+}

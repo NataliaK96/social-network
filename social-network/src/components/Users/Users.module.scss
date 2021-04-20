@@ -1,0 +1,63 @@
+@import '../../assets/colors.scss';
+
+.location {
+  font-size: 14px;
+  font-weight: normal;
+  margin-top: 6px;
+}
+.number {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 0;
+}
+
+.selectedPage {
+  font-weight: bold;
+}
+.name {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px;
+}
+.pages {
+  display: flex;
+  align-items: center;
+}
+.page {
+  margin: 0 4px;
+  &:hover {
+    cursor: pointer;
+  }
+  @media (max-width: 450px) {
+    margin: 0 1px;
+  }
+}
+.user {
+  display: flex;
+  color: $rifle-green;
+  font-weight: 500;
+  border-bottom: 1px $coffee solid;
+  text-decoration: none;
+  padding: 10px 0 10px 0;
+  margin: 8px;
+  justify-content: space-between;
+  align-items: center;
+}
+.avatar {
+  width: 50px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+.userName {
+  display: flex;
+  align-items: flex-start;
+  @media (max-width: 450px) {
+    flex-direction: column;
+  }
+}
+.h {
+  @media (max-width: 450px) {
+    display: none;
+  }
+}

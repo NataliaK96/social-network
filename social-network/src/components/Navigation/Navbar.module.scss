@@ -1,0 +1,39 @@
+@import '../../assets/colors.scss';
+
+.nav {
+  line-height: 34px;
+  width: 18%;
+  min-width: 120px;
+  margin-right: 30px;
+  @media (max-width: 699px) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    background-color: $beige;
+    padding: 20px 20px 20px 5%;
+    box-shadow: $shadow;
+  }
+}
+.icon {
+  width: 24px;
+  margin-right: 10px;
+}
+.link {
+  border-radius: 4px;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: $rifle-green;
+  &:hover {
+    background-color: $coffee-colored;
+  }
+}
+.li {
+  margin-bottom: 20px;
+}
+
+.active {
+  color: $green;
+}

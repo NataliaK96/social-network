@@ -1,0 +1,18 @@
+@import './assets/colors.scss';
+.app_wrapper {
+  margin: auto;
+  background-color: $beige;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app_main {
+  position: relative;
+  display: flex;
+  padding: 20px 10% 0 5%;
+  flex: auto;
+  @media (max-width: 560px) {
+    padding: 20px 4% 0 4%;
+  }
+}

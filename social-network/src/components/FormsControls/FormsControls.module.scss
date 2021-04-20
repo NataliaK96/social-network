@@ -1,0 +1,35 @@
+@import '../../assets/colors.scss';
+
+.textarea {
+  outline: none;
+  box-shadow: $shadow;
+  border-radius: 4px;
+  border: 1px $coffee solid;
+  padding: 4px;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.formControl {
+  width: 100%;
+  @media (max-width: 500px) {
+    margin-bottom: 8px;
+  }
+}
+.formControl.error input,
+.formControl.error textarea {
+  border: solid $error 2px;
+}
+
+.formControl.error span {
+  color: $error;
+}
+
+.formSummaryError {
+  border: red 1px solid;
+  padding: 5px;
+  color: red;
+}
+.field {
+  margin-bottom: 10px;
+}
