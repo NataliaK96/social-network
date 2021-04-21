@@ -10,7 +10,7 @@ React application
 ### Application screens
 - Login page
 
-![image](https://user-images.githubusercontent.com/60849245/115606562-e99c8100-a2f4-11eb-8f89-bb980ad6f137.png)
+![image](https://user-images.githubusercontent.com/60849245/115611162-cd034780-a2fa-11eb-9033-51cd3d397d1b.png)
 ![image](https://user-images.githubusercontent.com/60849245/115606807-3c763880-a2f5-11eb-87e9-3d66685b550c.png)
 
 - Profile Page 
