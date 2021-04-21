@@ -20,7 +20,7 @@ React application
 
 - Messages Page 
 
-![image](https://user-images.githubusercontent.com/60849245/115609074-1f8f3480-a2f8-11eb-9707-a280bcf13fbe.png)
+![image](https://user-images.githubusercontent.com/60849245/115610278-b01a4480-a2f9-11eb-8713-735bd4f7187a.png)
 ![image](https://user-images.githubusercontent.com/60849245/115609120-2fa71400-a2f8-11eb-9cb6-407b8675a9e8.png)
 
 - Friends Page 
