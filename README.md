@@ -20,19 +20,19 @@ React application
 
 - Messages Page 
 
-![image](https://user-images.githubusercontent.com/60849245/115610278-b01a4480-a2f9-11eb-8713-735bd4f7187a.png)
+![image](https://user-images.githubusercontent.com/60849245/115610813-6aaa4700-a2fa-11eb-834a-397b64e5a08b.png)
 ![image](https://user-images.githubusercontent.com/60849245/115609120-2fa71400-a2f8-11eb-9cb6-407b8675a9e8.png)
 
 - Friends Page 
 
-![image](https://user-images.githubusercontent.com/60849245/115609302-6aa94780-a2f8-11eb-97fd-3afc4f372cd0.png)
-![image](https://user-images.githubusercontent.com/60849245/115609529-b0fea680-a2f8-11eb-89a3-fb130abff7ac.png)
+![image](https://user-images.githubusercontent.com/60849245/115610845-772e9f80-a2fa-11eb-8965-8b752ecf591c.png)
 ![image](https://user-images.githubusercontent.com/60849245/115609366-7d238100-a2f8-11eb-8c67-d170852bb58f.png)
+![image](https://user-images.githubusercontent.com/60849245/115610935-8d3c6000-a2fa-11eb-8e1b-19f1a2dcd0ca.png)
 ![image](https://user-images.githubusercontent.com/60849245/115609561-be1b9580-a2f8-11eb-9495-9c0d8b4f1850.png)
 
 - Music Page 
 
-![image](https://user-images.githubusercontent.com/60849245/115609650-ddb2be00-a2f8-11eb-80a8-2834ecd13f40.png)
+![image](https://user-images.githubusercontent.com/60849245/115611010-a2b18a00-a2fa-11eb-898a-d22ef4718343.png)
 ![image](https://user-images.githubusercontent.com/60849245/115610108-76e1d480-a2f9-11eb-9829-723ee415b949.png)
 
 ### Template
